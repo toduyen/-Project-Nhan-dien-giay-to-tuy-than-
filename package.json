@@ -1,0 +1,52 @@
+{
+  "name": "fpt_source_part2",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "bootstrap-icons": "^1.4.1",
+    "face-api.js": "^0.22.2",
+    "firebase": "^7.24.0",
+    "html-to-text": "^5.1.1",
+    "jquery": "^3.6.0",
+    "jspdf": "^2.3.1",
+    "re-base": "^4.0.0",
+    "react": "^16.14.0",
+    "react-bs-notifier": "^5.0.0",
+    "react-ckeditor-component": "^1.1.0",
+    "react-dom": "^16.14.0",
+    "react-facebook-login": "^4.1.1",
+    "react-html-table-to-excel": "^2.0.0",
+    "react-html5-camera-photo": "^1.5.4",
+    "react-images-upload": "^1.2.8",
+    "react-loading-screen": "0.0.17",
+    "react-qr-reader": "^2.2.1",
+    "react-redux": "^7.2.3",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^4.0.3",
+    "react-webcam": "^5.2.3",
+    "redux": "^4.0.5",
+    "superagent": "^6.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "proxy": "https://api.fpt.ai"
+}
