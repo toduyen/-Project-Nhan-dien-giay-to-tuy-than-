@@ -60,7 +60,6 @@ class UserInfoAuth extends Component {
     };
 
     logout = async() => {
-        console.log("logout");
         await firebase
             .auth()
             .signOut();
