@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import ReactHTMLTableToExcel from 'react-html-table-to-excel';
-import {firebaseone} from '../Firebase/firebaseconnectio';
-import Search from './SearchData/Search';
-import KOKOBAYs from './DataAwsSearch/dulieusearch';
+import {firebaseone} from '../../Firebase/firebaseconnectio';
+import Search from './HienThi/DuLieuSearchItem';
+import KOKOBAYs from './HienThi/DuLieuSearch';
 
 class ListTable extends Component {
     constructor(props) {

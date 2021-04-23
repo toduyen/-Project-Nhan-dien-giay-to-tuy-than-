@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Dilieu from './dulieunhandienhettahn';
+import Dilieu from './DuLieuSearchItem';
 class dulieusearch extends Component {
     YearGetNew = () => {
         return new Date().getFullYear();

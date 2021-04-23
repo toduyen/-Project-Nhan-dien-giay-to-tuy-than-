@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import request from 'superagent';
-import KOKOBAY from './itemback';
-import mahoan2 from './Data/mahoan2.json';
-import {firebaseone} from '../Firebase/firebaseconnectio';
+import KOKOBAY from './HienThi/item';
+import mahoan2 from '../Data/mahoan2.json';
+import {firebaseone} from '../../Firebase/firebaseconnectio';
 import Camera from 'react-html5-camera-photo';
-import {firebasethree} from '../Firebase/firebaseconnectio';
+import {firebasethree} from '../../Firebase/firebaseconnectio';
 import 'react-html5-camera-photo/build/css/index.css';
 import {connect} from 'react-redux';
 class FormTextBack extends Component {
