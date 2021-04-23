@@ -24,12 +24,12 @@ class DieuHuongUrl extends Component {
                     <Route path="/mat-truoc" component={this.FormText}></Route>
                     <Route path="/mat-sau" component={this.FormTextBack}></Route>
                     <Route path="/danh-sach" component={this.DanhsachTable}></Route>
+										<Route path="/du-lieu-update-no-ai" component={this.Palte}></Route>
                     <ComponentsPrivate path="/thong-ke" component={this.FormInForVsEdit}></ComponentsPrivate>
                     <ComponentsPrivate path="/giong-noi" component={this.Language_speed_ai}></ComponentsPrivate>
                     <ComponentsPrivate path="/hien-thi-danh-sach" component={this.New}></ComponentsPrivate>
                     <ComponentsPrivate path="/du-lieu-giong-noi" component={this.DataLanguage}></ComponentsPrivate>
                     <ComponentsPrivate path="/chi-tiet-tai-lieu/:slug.:id.html" component={this.NewDeltal}></ComponentsPrivate>
-                    <ComponentsPrivate path="/du-lieu-update-no-ai" component={this.Palte}></ComponentsPrivate>
                     <ComponentsPrivate path="/thong-tin-he-thong" component={this.Infos}></ComponentsPrivate>
                     {/* react router */}
                     <Route path="/login" component={this.Login}/>

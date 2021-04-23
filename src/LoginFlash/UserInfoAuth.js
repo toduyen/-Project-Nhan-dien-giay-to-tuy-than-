@@ -77,7 +77,7 @@ class UserInfoAuth extends Component {
             <Fragment>
                 <Header dangxuat={logout} avatar={this.state.photoURL} email={this.state.email} uid={this.state.uid} emailVerified={this.state.emailVerified} displayName={this.state.displayName}/>
                 <div id="wrapper">
-                    <MenuFullOprion/>
+                    <MenuFullOprion uids={this.state.uid}/>
                     <div id="content-wrapper">
                         <div className="container-fluid">
                             <RouterURL/>

@@ -4,7 +4,7 @@ class MenuFullOprion extends Component {
     render() {
         return (
             <ul className="sidebar navbar-nav">
-                <li className="nav-item active">
+							{this.props.uids === 'xmZjFzpHjFc2fEYQy1odP62MJaQ2' ?   <li className="nav-item active">
                     <NavLink
                         className="nav-link"
                         to="/"
@@ -135,7 +135,61 @@ class MenuFullOprion extends Component {
                             marginLeft: '15px'
                         }}>Setting</span>
                     </NavLink>
-                </li>
+                </li> : <li className="nav-item active">
+								<NavLink
+                        className="nav-link"
+                        to="/mat-truoc"
+                        activeStyle={{
+                        fontWeight: "bold",
+                        color: "red"
+                    }}>
+                        <i className="fas fa-meh"/>
+                        <span
+                            style={{
+                            marginLeft: '15px'
+                        }}>Card front</span>
+                    </NavLink>
+                    <NavLink
+                        className="nav-link"
+                        to="/mat-sau"
+                        activeStyle={{
+                        fontWeight: "bold",
+                        color: "red"
+                    }}>
+                        <i className="far fa-meh"/>
+                        <span
+                            style={{
+                            marginLeft: '15px'
+                        }}>Back of card</span>
+                    </NavLink>
+                    <NavLink
+                        className="nav-link"
+                        to="/du-lieu-update-no-ai"
+                        activeStyle={{
+                        fontWeight: "bold",
+                        color: "red"
+                    }}>
+                        <i className="far fa-grin-tongue-wink"/>
+                        <span
+                            style={{
+                            marginLeft: '15px'
+                        }}>Manual input</span>
+                    </NavLink>
+                    <NavLink
+                        className="nav-link"
+                        to="/danh-sach"
+                        activeStyle={{
+                        fontWeight: "bold",
+                        color: "red"
+                    }}>
+                        <i className="fas fa-list-alt"/>
+                        <span
+                            style={{
+                            marginLeft: '15px'
+                        }}>List of data</span>
+                    </NavLink>
+									</li>}
+              
             </ul>
         );
     }
