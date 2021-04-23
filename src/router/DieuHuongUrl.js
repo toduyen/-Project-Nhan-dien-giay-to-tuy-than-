@@ -4,7 +4,7 @@ import asyncComponent from '../router/asyncComponent';
 import ComponentsPrivate from '../RouterPrivateAuth/ComponentsPrivate';
 class DieuHuongUrl extends Component {
     Home = asyncComponent(() => import ('../components/Home/Home').then(module => module.default))
-    FormText = asyncComponent(() => import ('../components/FormText').then(module => module.default))
+    FormText = asyncComponent(() => import ('../components/Mattruoc').then(module => module.default))
     FormTextBack = asyncComponent(() => import ('../components/FormTextBack').then(module => module.default))
     DanhsachTable = asyncComponent(() => import ('../components/ListTable').then(module => module.default))
     FormInForVsEdit = asyncComponent(() => import ('../components/Thongke').then(module => module.default))

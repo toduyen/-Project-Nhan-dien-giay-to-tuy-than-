@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import {withRouter} from 'react-router-dom';
 import Webcam from 'react-webcam';
-import {loadModels, getFullFaceDescription, createMatcher} from '../api/face';
-import DrawBox from '../components/drawBox';
+import {loadModels, getFullFaceDescription, createMatcher} from '../LoadingModel/LoadedModel';
+import DrawBox from '../LoadingModel/drawBox';
 
 const WIDTH = 620;
 const HEIGHT = 420;

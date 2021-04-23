@@ -2,13 +2,13 @@ import React, {Component} from 'react';
 import Camera from 'react-html5-camera-photo';
 import 'react-html5-camera-photo/build/css/index.css';
 import request from 'superagent';
-import KOKOBAY from './item';
-import mahoan from './Data/mahoan.json';
-import {firebasethree} from '../Firebase/firebaseconnectio';
+import KOKOBAY from './HienThi/item';
+import mahoan from '../Data/mahoan.json';
+import {firebasethree} from '../../Firebase/firebaseconnectio';
 import {connect} from 'react-redux';
-import EKYC from './photoRecognition';
-import CAMEKYC from './cameraFaceDetect';
-import CAMERABLINK from './cameraEyeBlink';
+import EKYC from '../Mattruoc/Ekyc/photoRecognition';
+import CAMEKYC from '../Mattruoc/Ekyc/cameraFaceDetect';
+import CAMERABLINK from '../Mattruoc/EyeBlink/cameraEyeBlink';
 class FormText extends Component {
     constructor(props) {
         super(props);

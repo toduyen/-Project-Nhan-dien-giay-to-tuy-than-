@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {loadModels, getFullFaceDescription, createMatcher, isFaceDetectionModelLoaded} from '../api/face';
-import DrawBox from '../components/drawBox';
-import ShowDescriptors from '../components/showDescriptors';
+import {loadModels, getFullFaceDescription, createMatcher, isFaceDetectionModelLoaded} from '../LoadingModel/LoadedModel';
+import DrawBox from '../LoadingModel/drawBox';
+import ShowDescriptors from '../LoadingModel/showDescriptors';
 
 const MaxWidth = 480;
 const boxColor = '#BE80B5';
