@@ -5,9 +5,9 @@ import {firebaseApp} from "../Firebase/firebaseconnectio";
 import RouterURL from "../router/DieuHuongUrl";
 import {connect} from "react-redux";
 import fakeAuth from '../RedirectAuth/FakeAuth';
-import Header from '../components/Header/Header';
-import MenuFullOprion from '../components/Menu/MenuFullOprion'
-import Footer from '../components/Footer/Footer';
+import Header from '../components/Header';
+import MenuFullOprion from '../components/Menu'
+import Footer from '../components/Footer';
 const AuthButton = (() => fakeAuth.isAuthenticated
     ? (
         <p>

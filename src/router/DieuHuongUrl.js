@@ -14,7 +14,6 @@ class DieuHuongUrl extends Component {
     NewDeltal = asyncComponent(() => import ('../components/DanhSachVanBan/ChiTietBaiViet/LuuData/NewDeltal').then(module => module.default))
     Palte = asyncComponent(() => import ('../components/ThembangTay').then(module => module.default))
     Infos = asyncComponent(() => import ('../components/CaiDat/Index').then(module => module.default))
-    Protecred = asyncComponent(() => import ('../componentsPublic/Protecred').then(module => module.default))
     Login = asyncComponent(() => import ('../RedirectAuth/Login').then(module => module.default))
     render() {
         return (
@@ -35,7 +34,6 @@ class DieuHuongUrl extends Component {
                     <ComponentsPrivate path="/thong-tin-he-thong" component={this.Infos}></ComponentsPrivate>
                     {/* react router */}
                     <Route path="/login" component={this.Login}/>
-                    <ComponentsPrivate path="/protected" component={this.Protecred}/>
                 </Switch>
             </div>
         );
