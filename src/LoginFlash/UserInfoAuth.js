@@ -20,14 +20,16 @@ const AuthButton = (() => fakeAuth.isAuthenticated
     ));
 
 class UserInfoAuth extends Component {
-		constructor(props) {
-			super(props);
-			this.state = {
-        email: null,
-        displayName: null,
-        uid: null
-    	};
-		}
+    constructor(props) {
+        super(props);
+        this.state = {
+            email: null,
+            displayName: null,
+            uid: null,
+            photoURL: null,
+						emailVerified: null
+        };
+    }
 
     componentDidMount() {
         firebase
@@ -40,11 +42,12 @@ class UserInfoAuth extends Component {
     }
 
     authHandler = async authData => {
+        console.log(authData.user);
         this
             .props
             .layID(authData.user.uid); // xmZjFzpHjFc2fEYQy1odP62MJaQ2
         const user = authData.user;
-        this.setState({email: user.email, displayName: user.displayName, uid: user.uid});
+        this.setState({email: user.email, displayName: user.displayName, uid: user.uid, photoURL: user.photoURL, emailVerified: user.emailVerified});
     };
 
     authenticate = provider => {
@@ -65,22 +68,20 @@ class UserInfoAuth extends Component {
     };
 
     render() {
-        const logout = <button onClick={this.logout}>Log Out! Auth Github or Facebook</button>;
+
+        const logout = <button onClick={this.logout}>Log Out! Auth Github or Facebook</button>; // chua thao tac
         if (!this.state.email) {
             return <Login authenticate={this.authenticate}/>;
         }
         return (
             <Fragment>
-                <Header avatar={this.state.photoURL}/>
+                <Header avatar={this.state.photoURL} email={this.state.email} uid={this.state.uid} emailVerified={this.state.emailVerified} displayName={this.state.displayName}/>
                 <div id="wrapper">
                     <MenuFullOprion/>
                     <div id="content-wrapper">
                         <div className="container-fluid">
-                            <div>
-                                <RouterURL/>
-                                <AuthButton/>
-                                <div>{logout}</div>
-                            </div>
+                            <RouterURL/>
+                            <AuthButton/>
                             <Footer/>
                         </div>
                     </div>

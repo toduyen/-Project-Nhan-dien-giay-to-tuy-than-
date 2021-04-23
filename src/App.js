@@ -23,8 +23,7 @@ class App extends Component {
         return (
 
             <Router>
-        
-                                <UserInfo/>
+                <UserInfo/>
             </Router>
 
         );

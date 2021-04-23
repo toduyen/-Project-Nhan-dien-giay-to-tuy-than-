@@ -22,9 +22,12 @@ class Header extends Component {
                             data-toggle="dropdown"
                             aria-haspopup="true"
                             aria-expanded="false">
-                            <small className="alert alert-dark" role="alert">
-                                Live Demo Unit [Author: Phan Tuân]
-                            </small>
+														{this.props.uid==='xmZjFzpHjFc2fEYQy1odP62MJaQ2' ?  <small className="alert alert-dark" role="alert">
+                                Người truy cập {this.props.email} Quyền cao nhất
+                            </small> :  <small className="alert alert-dark" role="alert">
+                                Người truy cập {this.props.email}
+                            </small>}
+                           
                             <img
                                 src={this.props.avatar}
                                 alt="logo"
@@ -36,10 +39,18 @@ class Header extends Component {
                             className="dropdown-menu dropdown-menu-right"
                             aria-labelledby="userDropdown">
                             <a className="dropdown-item" href="/">
-                                <span></span>
+                                <span>Địa chỉ Email : {this.props.email}</span>
                             </a>
                             <a className="dropdown-item" href="/">
-                                <span></span>
+                                <span>Mã id : {this.props.uid}</span>
+                            </a>
+														<a className="dropdown-item" href="/">
+																{this.props.displayName ?  <span>Tên truy cập : {this.props.displayName}</span> :  <span>Tên truy cập : Không có</span>}
+                               
+                            </a>
+														<a className="dropdown-item" href="/">
+																{this.props.emailVerified ?  <span>Đã xác thực thư thành công</span> :  <span>Yêu cầu kiểm tra thư điện tử</span>}
+                               
                             </a>
                             <div className="dropdown-divider"/>
                             <a
