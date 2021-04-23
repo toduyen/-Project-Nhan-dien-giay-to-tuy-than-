@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {firebasetwo} from '../../Firebase/firebaseconnectio';
-import TaskShow from './TaskShow';
+import TaskShow from './HienThi/ItemBaiViet';
 class New extends Component {
     constructor(props) {
         super(props);

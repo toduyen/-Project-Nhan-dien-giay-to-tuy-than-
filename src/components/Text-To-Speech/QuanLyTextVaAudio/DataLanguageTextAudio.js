@@ -61,7 +61,7 @@ class DataLanguageTextAudio extends Component {
                     <button
                         className="btn btn-outline-secondary"
                         onClick={() => this.Buttondelete()}>
-                        DELE
+                        DELETE
                     </button>
                 </td>
             </tr>

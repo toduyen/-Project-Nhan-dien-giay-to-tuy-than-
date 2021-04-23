@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {firebasethree} from '../../Firebase/firebaseconnectio';
 import {firebasefor} from '../../Firebase/firebaseconnectio';
-import Search3 from '../SearchData/Search3';
-import TableQR from '../TableQR/TableQR';
+import Search3 from './Fom/TimKiem';
+import TableQR from './Table/TableQR';
 class Infos extends Component {
     constructor(props) {
         super(props);
