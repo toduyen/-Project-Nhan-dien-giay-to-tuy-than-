@@ -75,7 +75,7 @@ class UserInfoAuth extends Component {
         }
         return (
             <Fragment>
-                <Header avatar={this.state.photoURL} email={this.state.email} uid={this.state.uid} emailVerified={this.state.emailVerified} displayName={this.state.displayName}/>
+                <Header dangxuat={logout} avatar={this.state.photoURL} email={this.state.email} uid={this.state.uid} emailVerified={this.state.emailVerified} displayName={this.state.displayName}/>
                 <div id="wrapper">
                     <MenuFullOprion/>
                     <div id="content-wrapper">

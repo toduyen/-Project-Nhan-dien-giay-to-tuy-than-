@@ -57,7 +57,7 @@ class Header extends Component {
                                 className="dropdown-item"
                                 href="/"
                                 data-toggle="modal"
-                                data-target="#logoutModal">Đăng xuất</a>
+                                data-target="#logoutModal">{this.props.dangxuat}</a>
                         </div>
                     </li>
                 </ul>
