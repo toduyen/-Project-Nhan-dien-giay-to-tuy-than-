@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {firebaseone} from '../Firebase/firebaseconnectio';
+import {firebaseone} from '../../../Firebase/firebaseconnectio';
 class ThongBaoCapCao2 extends Component {
     constructor(props) {
         super(props);

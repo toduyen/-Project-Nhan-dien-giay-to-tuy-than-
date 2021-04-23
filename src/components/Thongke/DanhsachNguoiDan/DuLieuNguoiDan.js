@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import PhanTich from '../ButtonControl/PhanTIch';
-import Buttonform from '../Buttonform';
+import PhanTich from './Form/Title';
+import Buttonform from './DeleteAndEditModal';
 
 class dulieutimkiemformthongke extends Component {
     render() {

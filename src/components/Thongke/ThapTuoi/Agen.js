@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {firebaseone} from '../../Firebase/firebaseconnectio';
+import {firebaseone} from '../../../Firebase/firebaseconnectio';
 class Agen extends Component {
 
     constructor(props) {

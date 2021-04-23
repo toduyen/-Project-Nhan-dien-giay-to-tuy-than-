@@ -3,7 +3,7 @@ import {withRouter} from 'react-router-dom';
 import Webcam from 'react-webcam';
 import {loadModels, getFullFaceDescription, createMatcher, getDataBlink, getDataBlink2} from '../api/face';
 import DrawBox from '../components/drawBox';
-import {JSON_PROFILE} from '../common/profile';
+import {JSON_PROFILE} from '../Face_Recognition/Import_Lable_Face/profile';
 import BlinkEye from '../components/TaskLiveness/BlinkEye';
 
 const WIDTH = 420;

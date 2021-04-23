@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import DataLanguageTextAudio from './AI/DataLanguageTextAudio';
+import DataLanguageTextAudio from '../components/Text-To-Speech/DataLanguageTextAudio';
 import {firebasetwo} from '../Firebase/firebaseconnectio';
 class DataLanguage extends Component {
 

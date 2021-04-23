@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
-import ThongBaoCapCaoCo from './ThongBaoCapCao';
-import {firebaseone} from '../Firebase/firebaseconnectio';
-import ChartInFo from './ChartInFo';
-import Search2 from './SearchData/Search2';
-import KOOBAY from './DataAwsSearch/dulieutimkiemformthongke';
-import mahoans from './Data/mahoan.json'
+import ThongBaoCapCaoCo from './ThongTinTongQuat/SoLuongDanSoNam';
+import {firebaseone} from '../../Firebase/firebaseconnectio';
+import ChartInFo from './ThapGiayToVaDanSo/ThapDanSoHienTai';
+import Search2 from './DanhsachNguoiDan/Form/FormSearch';
+import KOOBAY from './DanhsachNguoiDan/DuLieuNguoiDan';
+import mahoans from '../Data/mahoan.json'
 import Agen from './ThapTuoi/Agen';
 import DiaPhuong from './ThapDiaPhuong/diaPhuong';
 class FormInForVsEdit extends Component {

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {firebaseone} from '../Firebase/firebaseconnectio';
-import ThongBaoCapCao2 from './ThongBaoCapCao2';
-import GiayToQuanTrong from './GiayToQuanTrong';
+import {firebaseone} from '../../../Firebase/firebaseconnectio';
+import ThongBaoCapCao2 from './SoLuongDanSoNu';
+import GiayToQuanTrong from './SoLuongGiayTo';
 class ThongBaoCapCao extends Component {
     constructor(props) {
         super(props);
