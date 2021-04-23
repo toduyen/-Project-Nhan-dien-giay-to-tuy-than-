@@ -1,13 +1,13 @@
 import React, {Component, Fragment} from "react";
 import firebase from "firebase";
 import Login from "./LoginAuth";
-import {firebaseApp} from "../Firebase/firebaseconnectio";
-import RouterURL from "../router/DieuHuongUrl";
+import {firebaseApp} from "../../Firebase/firebaseconnectio";
+import RouterURL from "../../router/DieuHuongUrl";
 import {connect} from "react-redux";
-import fakeAuth from '../RedirectAuth/FakeAuth';
-import Header from '../components/Header';
-import MenuFullOprion from '../components/Menu'
-import Footer from '../components/Footer';
+import fakeAuth from '../FakeAuth';
+import Header from '../../Layout/Header';
+import MenuFullOprion from '../../Layout/Menu'
+import Footer from '../../Layout/Footer';
 const AuthButton = (() => fakeAuth.isAuthenticated
     ? (
         <p>
