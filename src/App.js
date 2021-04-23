@@ -3,10 +3,9 @@ import './App.css';
 import {BrowserRouter as Router} from "react-router-dom";
 import AleartInfo from './components/notifier/AleartInfo';
 import {connect} from 'react-redux';
-import Header from './components/Header/Header';
-import MenuFullOprion from './components/Menu/MenuFullOprion'
-import DieuHuongUrl from './router/DieuHuongUrl';
-import Footer from './components/Footer/Footer';
+
+import UserInfo from "./LoginFlash/UserInfoAuth";
+
 class App extends Component {
     constructor(props) {
         super(props);
@@ -24,17 +23,8 @@ class App extends Component {
         return (
 
             <Router>
-                {this.showthongbao()}
-                <Header avatar={this.state.photoURL}/>
-                <div id="wrapper">
-                    <MenuFullOprion/>
-                    <div id="content-wrapper">
-                        <div className="container-fluid">
-                            <DieuHuongUrl/>
-                            <Footer/>
-                        </div>
-                    </div>
-                </div>
+        
+                                <UserInfo/>
             </Router>
 
         );
