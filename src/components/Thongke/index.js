@@ -173,7 +173,6 @@ class FormInForVsEdit extends Component {
                         </table>
                     </div>
                 </div>
-
                 <CHARTINFOSS/>
                 <div className="container">
                     <div
