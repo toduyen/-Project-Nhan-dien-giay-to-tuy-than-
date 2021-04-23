@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {firebasetwo} from '../../../../Firebase/firebaseconnectio';
-import ShowDataNow from './ShowDataNow';
-import CacDataLienQUan from './CacDataLienQUan';
+import ShowDataNow from '../LuuData/ShowDataNow';
+import CacDataLienQUan from '../LuuData/CacDataLienQUan';
 class NewDeltal extends Component {
     constructor(props) {
         super(props);

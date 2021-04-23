@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {firebaseone} from '../../../Firebase/firebaseconnectio';
-import GiayToQuanTrong2 from '../../GiayToQuanTrong2';
+import GiayToQuanTrong2 from './SoLuongRong';
 class GiayToQuanTrong extends Component {
     constructor(props) {
         super(props);
