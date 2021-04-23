@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './App.css';
 import {BrowserRouter as Router} from "react-router-dom";
-import AleartInfo from './components/notifier/AleartInfo';
+import AleartInfo from './Layout/notifier/AleartInfo';
 import {connect} from 'react-redux';
 
 import UserInfo from "../src/RedirectAuth/LoginFlash/UserInfoAuth";
@@ -23,6 +23,7 @@ class App extends Component {
         return (
 
             <Router>
+								{this.showthongbao()}
                 <UserInfo/>
             </Router>
 
