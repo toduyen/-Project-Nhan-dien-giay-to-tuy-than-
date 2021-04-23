@@ -1,15 +1,15 @@
-import reducer1 from '../reducer/reducer1';
-import reducer2 from '../reducer/reducer2';
-import reducer3 from '../reducer/reducer3';
-import reducer4 from '../reducer/reducer4';
-import reducer5 from '../reducer/reducer5';
-import reducer6 from '../reducer/reducer6';
-import reducer7 from '../reducer/reducer7';
-import reducer8 from '../reducer/reducer8';
-import reducer9 from '../reducer/reducer9';
-import reducerFE from '../reducer/reducerFE';
-import reducerFE2 from '../reducer/reducerFE2';
-import reducerStateLoginAuth from '../reducer/reducerStateLoginAuth';
+import reducer1 from './reducer/reducer1';
+import reducer2 from './reducer/reducer2';
+import reducer3 from './reducer/reducer3';
+import reducer4 from './reducer/reducer4';
+import reducer5 from './reducer/reducer5';
+import reducer6 from './reducer/reducer6';
+import reducer7 from './reducer/reducer7';
+import reducer8 from './reducer/reducer8';
+import reducer9 from './reducer/reducer9';
+import reducerFE from './reducer/reducerFE';
+import reducerFE2 from './reducer/reducerFE2';
+import reducerStateLoginAuth from './reducer/reducerStateLoginAuth';
 
 var redux = require('redux');
 

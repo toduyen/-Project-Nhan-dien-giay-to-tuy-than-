@@ -1,4 +1,4 @@
-import {firebasethree} from '../Firebase/firebaseconnectio';
+import {firebasethree} from '../../Firebase/firebaseconnectio';
 const initState = {
 	Nhangiatriapimoi: 'ae09e31509b6444381556e772689eb09',
 };

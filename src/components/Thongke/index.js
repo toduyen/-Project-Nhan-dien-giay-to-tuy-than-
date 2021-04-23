@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import ThongBaoCapCaoCo from './ThongTinTongQuat/SoLuongDanSoNam';
 import {firebaseone} from '../../Firebase/firebaseconnectio';
-import ChartInFo from './ThapGiayToVaDanSo/ThapDanSoHienTai';
+import CHARTINFOSS from './ThapGiayToVaDanSo/ThapDanSoHienTai';
 import Search2 from './DanhsachNguoiDan/Form/FormSearch';
 import KOOBAY from './DanhsachNguoiDan/DuLieuNguoiDan';
 import mahoans from '../Data/mahoan.json'
@@ -113,7 +113,8 @@ class FormInForVsEdit extends Component {
                 return 0;
             });
         return (
-            <div id="accordion" className="mt-4">
+					<>
+						    <div id="accordion" className="mt-4">
                 <div className="row mt-3 mb-4">
                     <div className="col-md-6 d-flex justify-content-start">
                         <iframe
@@ -173,7 +174,7 @@ class FormInForVsEdit extends Component {
                     </div>
                 </div>
 
-                <ChartInFo/>
+                <CHARTINFOSS/>
                 <div className="container">
                     <div
                         className="row"
@@ -203,6 +204,7 @@ class FormInForVsEdit extends Component {
                 <KOOBAY dulieukiemtim={ketqua}/>
 
             </div>
+					</>
         );
     }
 }

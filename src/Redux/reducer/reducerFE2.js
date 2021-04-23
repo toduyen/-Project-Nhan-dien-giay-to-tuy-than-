@@ -1,4 +1,4 @@
-import {firebasefive} from '../Firebase/firebaseconnectio';
+import {firebasefive} from '../../Firebase/firebaseconnectio';
 
 const initState = {
     LuuData2: {},

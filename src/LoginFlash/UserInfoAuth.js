@@ -42,7 +42,6 @@ class UserInfoAuth extends Component {
     }
 
     authHandler = async authData => {
-        console.log(authData.user);
         this
             .props
             .layID(authData.user.uid); // xmZjFzpHjFc2fEYQy1odP62MJaQ2

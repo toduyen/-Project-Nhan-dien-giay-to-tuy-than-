@@ -1,4 +1,4 @@
-import {firebaseone} from '../Firebase/firebaseconnectio';
+import {firebaseone} from '../../Firebase/firebaseconnectio';
 
 const initState7 = {
     getdata: {},

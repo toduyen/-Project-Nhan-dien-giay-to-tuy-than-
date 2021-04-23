@@ -1,4 +1,4 @@
-import {firebasetwo} from '../Firebase/firebaseconnectio';
+import {firebasetwo} from '../../Firebase/firebaseconnectio';
 
 const initState5 = {
     Deledata: {},

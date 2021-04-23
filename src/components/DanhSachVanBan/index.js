@@ -38,6 +38,7 @@ class New extends Component {
                 .data
                 .map((value, key) => {
                     return <TaskShow
+												key={key}
                         hinhanhs={value.hinhanh}
                         vanbans={value.vanbans}
                         ssss={value.key}
