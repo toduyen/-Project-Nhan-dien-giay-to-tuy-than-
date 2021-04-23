@@ -2,10 +2,10 @@ import React, {Component} from 'react';
 import CKEditor from "react-ckeditor-component";
 import request from 'superagent';
 import htmlToText from 'html-to-text';
-import ngonngu from '../Data/ngongu.json';
-import vanban from '../Data/vanban.json';
-import HinhAnh from '../Data/HinhAnh.json';
-import Ht from '../Data/HashTag.json';
+import ngonngu from '../../Data/ngongu.json';
+import vanban from '../../Data/vanban.json';
+import HinhAnh from '../../Data/HinhAnh.json';
+import Ht from '../../Data/HashTag.json';
 import {connect} from 'react-redux';
 import LoadingScreen from 'react-loading-screen';
 class Language_speed_ai extends Component {

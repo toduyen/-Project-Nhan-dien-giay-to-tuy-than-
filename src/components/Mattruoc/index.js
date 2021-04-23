@@ -3,7 +3,7 @@ import Camera from 'react-html5-camera-photo';
 import 'react-html5-camera-photo/build/css/index.css';
 import request from 'superagent';
 import KOKOBAY from './HienThi/item';
-import mahoan from '../Data/mahoan.json';
+import mahoan from '../../Data/mahoan.json';
 import {firebasethree} from '../../Firebase/firebaseconnectio';
 import {connect} from 'react-redux';
 import EKYC from '../Mattruoc/Ekyc/photoRecognition';

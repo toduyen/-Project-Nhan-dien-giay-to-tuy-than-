@@ -4,7 +4,7 @@ import {firebaseone} from '../../Firebase/firebaseconnectio';
 import CHARTINFOSS from './ThapGiayToVaDanSo/ThapDanSoHienTai';
 import Search2 from './DanhsachNguoiDan/Form/FormSearch';
 import KOOBAY from './DanhsachNguoiDan/DuLieuNguoiDan';
-import mahoans from '../Data/mahoan.json'
+import mahoans from '../../Data/mahoan.json'
 import Agen from './ThapTuoi/Agen';
 import DiaPhuong from './ThapDiaPhuong/diaPhuong';
 class FormInForVsEdit extends Component {

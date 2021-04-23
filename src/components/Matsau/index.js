@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import request from 'superagent';
 import KOKOBAY from './HienThi/item';
-import mahoan2 from '../Data/mahoan2.json';
+import mahoan2 from '../../Data/mahoan2.json';
 import {firebaseone} from '../../Firebase/firebaseconnectio';
 import Camera from 'react-html5-camera-photo';
 import {firebasethree} from '../../Firebase/firebaseconnectio';

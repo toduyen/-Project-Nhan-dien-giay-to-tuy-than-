@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import logo from '../../img/chay.gif';
-import logo2 from '../../img/2.jpg';
-import logo9 from '../../img/9.gif';
+import logo from '../../Image/chay.gif';
+import logo2 from '../../Image/2.jpg';
+import logo9 from '../../Image/9.gif';
 export default class Home extends Component {
     render() {
         const WIDTH = document.documentElement.clientWidth;

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {firebaseone} from '../../../Firebase/firebaseconnectio';
 import ChartInFo2 from './ThapTileGiayTo';
-import dl from '../../Data/DulieuGioiTInh.json';
+import dl from '../../../Data/DulieuGioiTInh.json';
 import {connect} from 'react-redux';
 import $ from 'jquery';
 class ChartInFo extends Component {
