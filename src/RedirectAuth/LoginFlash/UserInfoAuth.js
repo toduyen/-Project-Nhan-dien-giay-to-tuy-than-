@@ -98,7 +98,7 @@ class UserInfoAuth extends Component {
 									uid : uid
 								})
             })
-						if(mangUids.indexOf(chuyoiSoSanh) !== -1)
+						if(String(mangUids.indexOf(chuyoiSoSanh)) != -1)
 						{
 							mangIndexOfView.forEach((item) => {
 								if(item.uid.indexOf(chuyoiSoSanh) != -1)
@@ -109,7 +109,7 @@ class UserInfoAuth extends Component {
 						}
 						else
 						{
-							this.props.layUserName(name, email , chuyoiSoSanh , '', luuKey);
+							this.props.layUserName(name, email , chuyoiSoSanh , null, luuKey);
 						}
         })
     }
