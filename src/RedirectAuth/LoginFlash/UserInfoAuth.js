@@ -8,7 +8,6 @@ import fakeAuth from '../FakeAuth';
 import Header from '../../Layout/Header';
 import MenuFullOprion from '../../Layout/Menu'
 import Footer from '../../Layout/Footer';
-import DataKey from '../../Data/DulieuTamThoiKey.json';
 const AuthButton = (() => fakeAuth.isAuthenticated
     ? (
         <p>
@@ -32,13 +31,6 @@ class UserInfoAuth extends Component {
         };
     }
 
-		componentWillMount() {
-			if(localStorage.getItem('luuyKyTamThoi') === null)
-			{
-				localStorage.setItem('luuyKyTamThoi',JSON.stringify(DataKey));
-			}
-		}
-		
 
     componentDidMount() {
         firebase
@@ -49,7 +41,6 @@ class UserInfoAuth extends Component {
                 }
             });
     }
-
     authHandler = async authData => {
         // xmZjFzpHjFc2fEYQy1odP62MJaQ2
         const user = authData.user;
@@ -60,60 +51,22 @@ class UserInfoAuth extends Component {
             photoURL: user.photoURL,
             emailVerified: user.emailVerified
         }, () => {
-            this
-                .props
-                .layID(user.uid);
-								this.insertDataDauvaohople(user.displayName , user.email , user.uid);
+            this.props.layID(user.uid);
         });
     };
-
     authenticate = provider => {
-        console.log(provider);
         const authProvider = new firebase.auth[`${provider}AuthProvider`]();
         firebaseApp
             .auth()
             .signInWithPopup(authProvider)
             .then(this.authHandler);
     };
-
     logout = async() => {
         await firebase
             .auth()
             .signOut();
         this.setState({email: null, displayName: null, uid: null});
     };
-
-    insertDataDauvaohople = (name , email , chuyoiSoSanh) => {
-        firebaseone.on('value', (snapshot) => {
-						var luuKey = '';
-            var mangUids = [];
-						var mangIndexOfView = [];
-            snapshot.forEach((element) => {
-								const key = element.key;
-                const uid = element.val().uid;
-                mangUids.push(uid);
-								luuKey = key;
-								mangIndexOfView.push({
-									key : key,
-									uid : uid
-								})
-            })
-						if(String(mangUids.indexOf(chuyoiSoSanh)) != -1)
-						{
-							mangIndexOfView.forEach((item) => {
-								if(item.uid.indexOf(chuyoiSoSanh) != -1)
-								{
-									localStorage.setItem('luuyKyTamThoi',item.key);
-								}
-							})
-						}
-						else
-						{
-							this.props.layUserName(name, email , chuyoiSoSanh , null, luuKey);
-						}
-        })
-    }
-
     render() {
         const logout = <button onClick={this.logout}>Log Out! Auth Github or Facebook</button>; // chua thao tac
         if (!this.state.email) {
@@ -150,8 +103,15 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         layID: (getString) => {
             dispatch({type: "CHANGE_STATE_LOGIN", getString})
         },
-        layUserName: (displayName, email, uid, DataCard,key) => {
-            dispatch({type: "INSERT_DATA_USER_OAUTH", displayName, email, uid, DataCard,key})
+        layUserName: (displayName, email, uid, DataCard, key) => {
+            dispatch({
+                type: "INSERT_DATA_USER_OAUTH",
+                displayName,
+                email,
+                uid,
+                DataCard,
+                key
+            })
         }
     }
 }
