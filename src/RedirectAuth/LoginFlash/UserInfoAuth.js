@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from "react";
 import firebase from "firebase";
 import Login from "./LoginAuth";
-import {firebaseApp} from "../../Firebase/firebaseconnectio";
+import {firebaseApp, firebaseone} from "../../Firebase/firebaseconnectio";
 import RouterURL from "../../router/DieuHuongUrl";
 import {connect} from "react-redux";
 import fakeAuth from '../FakeAuth';
@@ -27,7 +27,7 @@ class UserInfoAuth extends Component {
             displayName: null,
             uid: null,
             photoURL: null,
-						emailVerified: null
+            emailVerified: null
         };
     }
 
@@ -42,11 +42,20 @@ class UserInfoAuth extends Component {
     }
 
     authHandler = async authData => {
-        this
-            .props
-            .layID(authData.user.uid); // xmZjFzpHjFc2fEYQy1odP62MJaQ2
+        // xmZjFzpHjFc2fEYQy1odP62MJaQ2
         const user = authData.user;
-        this.setState({email: user.email, displayName: user.displayName, uid: user.uid, photoURL: user.photoURL, emailVerified: user.emailVerified});
+        this.setState({
+            email: user.email,
+            displayName: user.displayName,
+            uid: user.uid,
+            photoURL: user.photoURL,
+            emailVerified: user.emailVerified
+        }, () => {
+            this
+                .props
+                .layID(user.uid);
+								this.insertDataDauvaohople(user.displayName , user.email , user.uid);
+        });
     };
 
     authenticate = provider => {
@@ -65,15 +74,40 @@ class UserInfoAuth extends Component {
         this.setState({email: null, displayName: null, uid: null});
     };
 
-    render() {
+    insertDataDauvaohople = (name , email , uids) => {
+        firebaseone.on('value', (snapshot) => {
+            var mangUids = [];
+            snapshot.forEach((element) => {
+                const uids = element
+                    .val()
+                    .uid;
+                mangUids.push(uids);
+            })
+						if(mangUids.indexOf(uids) !== -1)
+						{
+							console.log(`Trùng data`);
+						}
+						else
+						{
+							this.props.layUserName(name, email , uids , '');
+						}
+        })
+    }
 
+    render() {
         const logout = <button onClick={this.logout}>Log Out! Auth Github or Facebook</button>; // chua thao tac
         if (!this.state.email) {
             return <Login authenticate={this.authenticate}/>;
         }
         return (
             <Fragment>
-                <Header dangxuat={logout} avatar={this.state.photoURL} email={this.state.email} uid={this.state.uid} emailVerified={this.state.emailVerified} displayName={this.state.displayName}/>
+                <Header
+                    dangxuat={logout}
+                    avatar={this.state.photoURL}
+                    email={this.state.email}
+                    uid={this.state.uid}
+                    emailVerified={this.state.emailVerified}
+                    displayName={this.state.displayName}/>
                 <div id="wrapper">
                     <MenuFullOprion uids={this.state.uid}/>
                     <div id="content-wrapper">
@@ -89,12 +123,15 @@ class UserInfoAuth extends Component {
     }
 }
 const mapStateToProps = (state, ownProps) => {
-    return {reducerStateLoginAuth: state.reducerStateLoginAuth}
+    return {reducerStateLoginAuth: state.reducerStateLoginAuth, reducerPushDatauser: state.reducerPushDatauser}
 }
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         layID: (getString) => {
             dispatch({type: "CHANGE_STATE_LOGIN", getString})
+        },
+        layUserName: (displayName, email, uid, DataCard) => {
+            dispatch({type: "INSERT_DATA_USER_OAUTH", displayName, email, uid, DataCard})
         }
     }
 }
