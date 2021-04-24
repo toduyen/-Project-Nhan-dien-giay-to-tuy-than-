@@ -8,6 +8,7 @@ import fakeAuth from '../FakeAuth';
 import Header from '../../Layout/Header';
 import MenuFullOprion from '../../Layout/Menu'
 import Footer from '../../Layout/Footer';
+import DataKey from '../../Data/DulieuTamThoiKey.json';
 const AuthButton = (() => fakeAuth.isAuthenticated
     ? (
         <p>
@@ -30,6 +31,14 @@ class UserInfoAuth extends Component {
             emailVerified: null
         };
     }
+
+		componentWillMount() {
+			if(localStorage.getItem('luuyKyTamThoi') === null)
+			{
+				localStorage.setItem('luuyKyTamThoi',JSON.stringify(DataKey));
+			}
+		}
+		
 
     componentDidMount() {
         firebase
@@ -74,22 +83,33 @@ class UserInfoAuth extends Component {
         this.setState({email: null, displayName: null, uid: null});
     };
 
-    insertDataDauvaohople = (name , email , uids) => {
+    insertDataDauvaohople = (name , email , chuyoiSoSanh) => {
         firebaseone.on('value', (snapshot) => {
+						var luuKey = '';
             var mangUids = [];
+						var mangIndexOfView = [];
             snapshot.forEach((element) => {
-                const uids = element
-                    .val()
-                    .uid;
-                mangUids.push(uids);
+								const key = element.key;
+                const uid = element.val().uid;
+                mangUids.push(uid);
+								luuKey = key;
+								mangIndexOfView.push({
+									key : key,
+									uid : uid
+								})
             })
-						if(mangUids.indexOf(uids) !== -1)
+						if(mangUids.indexOf(chuyoiSoSanh) !== -1)
 						{
-							console.log(`Trùng data`);
+							mangIndexOfView.forEach((item) => {
+								if(item.uid.indexOf(chuyoiSoSanh) != -1)
+								{
+									localStorage.setItem('luuyKyTamThoi',item.key);
+								}
+							})
 						}
 						else
 						{
-							this.props.layUserName(name, email , uids , '');
+							this.props.layUserName(name, email , chuyoiSoSanh , '', luuKey);
 						}
         })
     }
@@ -130,8 +150,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         layID: (getString) => {
             dispatch({type: "CHANGE_STATE_LOGIN", getString})
         },
-        layUserName: (displayName, email, uid, DataCard) => {
-            dispatch({type: "INSERT_DATA_USER_OAUTH", displayName, email, uid, DataCard})
+        layUserName: (displayName, email, uid, DataCard,key) => {
+            dispatch({type: "INSERT_DATA_USER_OAUTH", displayName, email, uid, DataCard,key})
         }
     }
 }
