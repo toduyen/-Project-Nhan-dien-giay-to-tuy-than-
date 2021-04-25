@@ -1,15 +1,20 @@
 import {firebaseone} from '../../Firebase/firebaseconnectio';
 const infoUserInitialState = {
-	displayName: null,
-	email: null,
-	uid: null,
-	DataCard: null,
+	newUserName : {}
 }
 const reducerPushDatauser = (state = infoUserInitialState, action) => {
 	switch (action.type) {
 		case "INSERT_DATA_USER_OAUTH":
-		
+		let tiepNhanDataUserName = {...state,newUserName:action.newItem}
+		if(tiepNhanDataUserName.newUserName.uid)
+		{
+			firebaseone.push(tiepNhanDataUserName.newUserName);
+		}
 		return state;
+
+
+
+		
 			case "INSERT_CHILD_FOR_PATHER":
 			var newPostKey = firebaseone.push().key;
 			var updates = {};

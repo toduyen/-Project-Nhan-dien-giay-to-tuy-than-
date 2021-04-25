@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from "react";
 import firebase from "firebase";
 import Login from "./LoginAuth";
-import {firebaseApp, firebaseone} from "../../Firebase/firebaseconnectio";
+import {firebaseApp,firebaseone} from "../../Firebase/firebaseconnectio";
 import RouterURL from "../../router/DieuHuongUrl";
 import {connect} from "react-redux";
 import fakeAuth from '../FakeAuth';
@@ -27,7 +27,8 @@ class UserInfoAuth extends Component {
             displayName: null,
             uid: null,
             photoURL: null,
-            emailVerified: null
+            emailVerified: null,
+						trangthai: false
         };
     }
 
@@ -43,7 +44,7 @@ class UserInfoAuth extends Component {
     }
     authHandler = async authData => {
         // xmZjFzpHjFc2fEYQy1odP62MJaQ2
-        const user = authData.user;
+        const user = await authData.user;
         this.setState({
             email: user.email,
             displayName: user.displayName,
@@ -67,7 +68,14 @@ class UserInfoAuth extends Component {
             .signOut();
         this.setState({email: null, displayName: null, uid: null});
     };
+		// var info = {};
+							// info.displayName = this.state.displayName;
+							// info.email = this.state.email;
+							// info.uid = this.state.uid;
+							// info.DataInput = "";
+							// this.props.layUserName(info);
     render() {
+				console.log(this.state.trangthai);
         const logout = <button onClick={this.logout}>Log Out! Auth Github or Facebook</button>; // chua thao tac
         if (!this.state.email) {
             return <Login authenticate={this.authenticate}/>;
@@ -103,14 +111,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         layID: (getString) => {
             dispatch({type: "CHANGE_STATE_LOGIN", getString})
         },
-        layUserName: (displayName, email, uid, DataCard, key) => {
+        layUserName: (newItem) => {
             dispatch({
                 type: "INSERT_DATA_USER_OAUTH",
-                displayName,
-                email,
-                uid,
-                DataCard,
-                key
+                newItem
             })
         }
     }
