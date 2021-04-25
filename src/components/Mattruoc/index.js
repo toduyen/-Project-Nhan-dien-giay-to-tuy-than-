@@ -663,8 +663,8 @@ const mapStateToProps = (state, ownProps) => {
 }
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        themmoiVaoNutCha: (ganGiatri) => {
-            dispatch({type: 'INSERT_CHILD_FOR_PATHER', ganGiatri})
+        themmoiVaoNutCha: (getitem) => {
+            dispatch({type: 'LAY_DATA', getitem})
         },
         ThuchienthaydoitrangthaiA: () => {
             dispatch({type: 'TRANG_THAI'})

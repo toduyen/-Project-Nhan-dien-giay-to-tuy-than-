@@ -28,7 +28,6 @@ class UserInfoAuth extends Component {
             uid: null,
             photoURL: null,
             emailVerified: null,
-						trangthai: false
         };
     }
 
@@ -68,14 +67,7 @@ class UserInfoAuth extends Component {
             .signOut();
         this.setState({email: null, displayName: null, uid: null});
     };
-		// var info = {};
-							// info.displayName = this.state.displayName;
-							// info.email = this.state.email;
-							// info.uid = this.state.uid;
-							// info.DataInput = "";
-							// this.props.layUserName(info);
     render() {
-				console.log(this.state.trangthai);
         const logout = <button onClick={this.logout}>Log Out! Auth Github or Facebook</button>; // chua thao tac
         if (!this.state.email) {
             return <Login authenticate={this.authenticate}/>;
@@ -110,12 +102,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         layID: (getString) => {
             dispatch({type: "CHANGE_STATE_LOGIN", getString})
-        },
-        layUserName: (newItem) => {
-            dispatch({
-                type: "INSERT_DATA_USER_OAUTH",
-                newItem
-            })
         }
     }
 }

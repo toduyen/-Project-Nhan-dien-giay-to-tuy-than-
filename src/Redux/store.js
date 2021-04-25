@@ -10,7 +10,6 @@ import reducer9 from './reducer/reducer9';
 import reducerFE from './reducer/reducerFE';
 import reducerFE2 from './reducer/reducerFE2';
 import reducerStateLoginAuth from './reducer/reducerStateLoginAuth';
-import reducerPushDatauser from './reducer/reducerPushDatauser';
 
 var redux = require('redux');
 
@@ -27,7 +26,6 @@ var allreducer = redux.combineReducers({
     suamaQR: reducerFE,
     themmoimotIDs: reducerFE2,
 		reducerStateLoginAuth: reducerStateLoginAuth,
-		reducerPushDatauser: reducerPushDatauser
 })
 
 var store = redux.createStore(allreducer);
