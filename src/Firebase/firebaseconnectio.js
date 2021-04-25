@@ -27,6 +27,10 @@ export const firebasefive = firebase
     .database()
     .ref('Note5');
 
+export const firebaseDemo = firebase
+    .database()
+    .ref('Demo');
+
 const base = Rebase.createClass(firebase.database());
 export {firebaseApp};
 export default base;

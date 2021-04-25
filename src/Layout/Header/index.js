@@ -53,11 +53,16 @@ class Header extends Component {
                                
                             </a>
                             <div className="dropdown-divider"/>
-                            <a
+                            <a 
                                 className="dropdown-item"
                                 href="/"
                                 data-toggle="modal"
                                 data-target="#logoutModal">{this.props.dangxuat}</a>
+																 <a
+                                className="dropdown-item"
+                                href="/"
+                                data-toggle="modal"
+                                data-target="#logoutModal">{this.props.yeucau}</a>
                         </div>
                     </li>
                 </ul>

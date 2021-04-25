@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from "react";
 import firebase from "firebase";
 import Login from "./LoginAuth";
-import {firebaseApp,firebaseone} from "../../Firebase/firebaseconnectio";
+import {firebaseApp,firebaseDemo} from "../../Firebase/firebaseconnectio";
 import RouterURL from "../../router/DieuHuongUrl";
 import {connect} from "react-redux";
 import fakeAuth from '../FakeAuth';
@@ -28,9 +28,9 @@ class UserInfoAuth extends Component {
             uid: null,
             photoURL: null,
             emailVerified: null,
+						data : false
         };
     }
-
 
     componentDidMount() {
         firebase
@@ -40,6 +40,21 @@ class UserInfoAuth extends Component {
                     this.authHandler({user});
                 }
             });
+
+
+						firebaseDemo.on('value',(dataSnapshort)=>{
+							var mang = [];
+							dataSnapshort.forEach((element) => {
+								const email = element.val().email;
+								mang.push({email:email})
+							});
+							if(mang.indexOf(this.state.email) != -1)
+							{
+								this.setState({
+									data : true
+								});
+							}
+						})
     }
     authHandler = async authData => {
         // xmZjFzpHjFc2fEYQy1odP62MJaQ2
@@ -62,13 +77,63 @@ class UserInfoAuth extends Component {
             .then(this.authHandler);
     };
     logout = async() => {
-        await firebase
-            .auth()
-            .signOut();
-        this.setState({email: null, displayName: null, uid: null});
+			await firebase
+			.auth()
+			.signOut();
+	this.setState({email: null, displayName: null, uid: null});
+				window.location.reload()
     };
+
+
+
+
+
+
+
+
+
+
+
+
+		sukienTaiDuLieu = () => {
+
+			var info = {};
+			info.displayName = this.state.displayName;
+			info.email = this.state.email;
+			info.uid = this.state.uid;
+			console.log(this.state.data);
+			if(this.state.data === true)
+			{
+				firebaseDemo.push(info);
+			}
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     render() {
-        const logout = <button onClick={this.logout}>Log Out! Auth Github or Facebook</button>; // chua thao tac
+        const logout = <button onClick={this.logout}>Log Out! Auth Github or Facebook</button>;
+				const addData = <button onClick={this.sukienTaiDuLieu}>Yêu cầu kích hoạt tự động</button>; // chua thao tac
         if (!this.state.email) {
             return <Login authenticate={this.authenticate}/>;
         }
@@ -76,6 +141,7 @@ class UserInfoAuth extends Component {
             <Fragment>
                 <Header
                     dangxuat={logout}
+										yeucau={addData}
                     avatar={this.state.photoURL}
                     email={this.state.email}
                     uid={this.state.uid}
