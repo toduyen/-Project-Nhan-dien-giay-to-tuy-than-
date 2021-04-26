@@ -97,7 +97,7 @@ class UserInfoAuth extends Component {
             .state
             .data
             .forEach((item) => {
-                if (item.email.indexOf(this.state.email) != -1) {
+                if (item.email.indexOf(this.state.email) !== -1) {
                     localStorage.setItem('dataUserNamePush', JSON.stringify(item))
 
                     mang.push(item);
