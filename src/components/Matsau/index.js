@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import request from 'superagent';
 import KOKOBAY from './HienThi/item';
 import mahoan2 from '../../Data/mahoan2.json';
-import {firebaseone, firebasethree, firebaseDemo} from '../../Firebase/firebaseconnectio';
+import {firebasethree, firebaseDemo} from '../../Firebase/firebaseconnectio';
 import Camera from 'react-html5-camera-photo';
 import 'react-html5-camera-photo/build/css/index.css';
 import {connect} from 'react-redux';
