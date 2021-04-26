@@ -1,4 +1,4 @@
-import {firebaseone} from '../../Firebase/firebaseconnectio';
+import {firebaseDemo} from '../../Firebase/firebaseconnectio';
 
 const initState7 = {
     getdata: {},
@@ -7,7 +7,7 @@ const initState7 = {
 const reducer7 = (state = initState7, action) => {
     switch (action.type) {
         case "GET_DATA_MASTER_BACK":
-        firebaseone.child(action.getitem.key).update({
+					firebaseDemo.child(JSON.parse(localStorage.getItem('dataUserNamePush')).key).child('DataCard').child(action.getitem.key).update({
             namess : action.getitem.namess,
             ethnicity : action.getitem.ethnicity,
             ngayhethan : action.getitem.ngayhethan,

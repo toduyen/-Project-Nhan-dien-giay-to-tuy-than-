@@ -2,9 +2,8 @@ import React, {Component} from 'react';
 import request from 'superagent';
 import KOKOBAY from './HienThi/item';
 import mahoan2 from '../../Data/mahoan2.json';
-import {firebaseone} from '../../Firebase/firebaseconnectio';
+import {firebaseone, firebasethree, firebaseDemo} from '../../Firebase/firebaseconnectio';
 import Camera from 'react-html5-camera-photo';
-import {firebasethree} from '../../Firebase/firebaseconnectio';
 import 'react-html5-camera-photo/build/css/index.css';
 import {connect} from 'react-redux';
 class FormTextBack extends Component {
@@ -106,20 +105,53 @@ class FormTextBack extends Component {
             });
             this.setState({datas: Mang});
         })
-        firebaseone.on('value', (datass) => {
-            var Mang2 = [];
-            datass.forEach(element => {
-                const stt = element.key;
-                const key = element
-                    .val()
-                    .key;
-                const name = element
-                    .val()
-                    .name;
-                Mang2.push({stt: stt, key: key, name: name})
-            });
-            this.setState({data2: Mang2});
-        })
+
+        if (JSON.parse(localStorage.getItem('dataUserNamePush')).email === 'toduyen0402@gmail.com') {
+
+            let ghinhandata = firebaseDemo;
+            ghinhandata.on('value', (snapshort) => {
+                var Mang2 = [];
+                snapshort.forEach((element) => {
+                    ghinhandata
+                        .child(element.key)
+                        .child('DataCard')
+                        .on('value', (datas) => {
+                            datas.forEach((elementChinhThuc) => {
+                                const stt = elementChinhThuc.key;
+                                const key = elementChinhThuc
+                                    .val()
+                                    .key;
+                                const name = elementChinhThuc
+                                    .val()
+                                    .name;
+                                Mang2.push({stt: stt, key: key, name: name})
+                            });
+                        });
+                })
+                this.setState({data2: Mang2});
+            })
+        } else {
+
+            firebaseDemo
+                .child(JSON.parse(localStorage.getItem('dataUserNamePush')).key)
+                .child('DataCard')
+                .on('value', (datas) => {
+                    var Mang2 = [];
+                    datas.forEach(element => {
+                        const stt = element.key;
+                        const key = element
+                            .val()
+                            .key;
+                        const name = element
+                            .val()
+                            .name;
+                        Mang2.push({stt: stt, key: key, name: name})
+                    });
+                    this.setState({data2: Mang2});
+                })
+
+        }
+
         if (localStorage.getItem('mahoan2') === null) {
             localStorage.setItem('mahoan2', JSON.stringify(mahoan2));
         } else {
