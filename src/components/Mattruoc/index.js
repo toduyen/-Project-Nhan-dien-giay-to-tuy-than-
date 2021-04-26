@@ -667,7 +667,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
             dispatch({type: 'LAY_DATA', getitem})
         },
 				themmoiVaoNutChaCuaCha: (ganGiatri) => {
-					dispatch({type: 'INSERT_CHILD_FOR_PATHER', ganGiatri})
+					dispatch({type: 'THEMMOI_VAO_NUT_CHA', ganGiatri})
 				},
         ThuchienthaydoitrangthaiA: () => {
             dispatch({type: 'TRANG_THAI'})

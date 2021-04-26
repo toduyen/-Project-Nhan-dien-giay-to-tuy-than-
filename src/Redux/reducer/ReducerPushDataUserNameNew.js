@@ -14,7 +14,7 @@ const reducerPushDatauser = (state = nameInitialState, action) => {
             }
             return state;
 
-        case "INSERT_CHILD_FOR_PATHER":
+        case "THEMMOI_VAO_NUT_CHA":
             var newPostKey = firebaseDemo
                 .push()
                 .key;
