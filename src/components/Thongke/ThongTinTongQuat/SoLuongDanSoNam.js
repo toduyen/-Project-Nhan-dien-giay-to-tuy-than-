@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {firebaseone} from '../../../Firebase/firebaseconnectio';
+import {firebaseDemo} from '../../../Firebase/firebaseconnectio';
 import ThongBaoCapCao2 from './SoLuongDanSoNu';
 import GiayToQuanTrong from './SoLuongGiayTo';
 class ThongBaoCapCao extends Component {
@@ -10,19 +10,29 @@ class ThongBaoCapCao extends Component {
         };
     }
     componentWillMount() {
-        firebaseone.on('value', (datas) => {
+
+        let ghinhandata = firebaseDemo;
+        ghinhandata.on('value', (snapshort) => {
             var Mang = [];
-            datas.forEach(element => {
-                const key = element.key;
-                const sex = element
-                    .val()
-                    .sex;
-                if (sex === "NAM") {
-                    Mang.push({key: key, sex: sex})
-                }
-            });
+            snapshort.forEach((element) => {
+                ghinhandata
+                    .child(element.key)
+                    .child('DataCard')
+                    .on('value', (datas) => {
+                        datas.forEach((elementChinhThuc) => {
+                            const key = elementChinhThuc.key;
+                            const sex = elementChinhThuc
+                                .val()
+                                .sex;
+                            if (sex === "NAM") {
+                                Mang.push({key: key, sex: sex})
+                            }
+                        });
+                    });
+            })
             this.setState({data: Mang});
         })
+
     }
     render() {
         return (

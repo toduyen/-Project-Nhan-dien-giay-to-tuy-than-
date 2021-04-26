@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {firebaseone} from '../../../Firebase/firebaseconnectio';
+import {firebaseDemo} from '../../../Firebase/firebaseconnectio';
 class diaPhuong extends Component {
 
     constructor(props) {
@@ -72,589 +72,606 @@ class diaPhuong extends Component {
         };
     }
     componentWillMount() {
-        firebaseone.on('value',(datas) => {
-            var Mang001 = [];
-            var Mang002 = [];
-            var Mang004 = [];
-            var Mang006 = [];
-            var Mang008 = [];
-						var Mang010 = [];
-						var Mang011 = [];
-						var Mang012 = [];
-						var Mang014 = [];
-						var Mang015 = [];
-						var Mang017 = [];
-						var Mang019 = [];
-						var Mang020 = [];
-						var Mang022 = [];
-						var Mang024 = [];
-						var Mang025 = [];
-						var Mang026 = [];
-						var Mang027 = [];
-						var Mang030 = [];
-						var Mang031 = [];
-						var Mang033 = [];
-						var Mang034 = [];
-						var Mang035 = [];
-						var Mang036 = [];
-						var Mang037 = [];
-						var Mang038 = [];
-						var Mang040 = [];
-						var Mang042 = [];
-						var Mang044 = [];
-						var Mang045 = [];
-						var Mang046 = [];
-						var Mang048 = [];
-						var Mang049 = [];
-						var Mang051 = [];
-						var Mang052 = [];
-						var Mang054 = [];
-						var Mang056 = [];
-						var Mang058 = [];
-						var Mang060 = [];
-						var Mang062 = [];
-						var Mang064 = [];
-						var Mang066 = [];
-						var Mang067 = [];
-						var Mang068 = [];
-						var Mang070 = [];
-						var Mang072 = [];
-						var Mang074 = [];
-						var Mang075 = [];
-						var Mang077 = [];
-						var Mang079 = [];
-						var Mang080 = [];
-						var Mang082 = [];
-						var Mang083 = [];
-						var Mang084 = [];
-						var Mang086 = [];
-						var Mang087 = [];
-						var Mang089 = [];
-						var Mang091 = [];
-						var Mang092 = [];
-						var Mang093 = [];
-						var Mang094 = [];
-						var Mang095 = [];
-						var Mang096 = [];
-            var Sun = [];
-            datas.forEach(element => {
-                const key = element.key;
-								const dob = element.val().id;
-			
-								const demso =  dob.slice(0,3);
+
+
+
+
+
+
+
+
+
+			let ghinhandata = firebaseDemo;
+			ghinhandata.on('value', (snapshort) => {
+				var Mang001 = [];
+				var Mang002 = [];
+				var Mang004 = [];
+				var Mang006 = [];
+				var Mang008 = [];
+				var Mang010 = [];
+				var Mang011 = [];
+				var Mang012 = [];
+				var Mang014 = [];
+				var Mang015 = [];
+				var Mang017 = [];
+				var Mang019 = [];
+				var Mang020 = [];
+				var Mang022 = [];
+				var Mang024 = [];
+				var Mang025 = [];
+				var Mang026 = [];
+				var Mang027 = [];
+				var Mang030 = [];
+				var Mang031 = [];
+				var Mang033 = [];
+				var Mang034 = [];
+				var Mang035 = [];
+				var Mang036 = [];
+				var Mang037 = [];
+				var Mang038 = [];
+				var Mang040 = [];
+				var Mang042 = [];
+				var Mang044 = [];
+				var Mang045 = [];
+				var Mang046 = [];
+				var Mang048 = [];
+				var Mang049 = [];
+				var Mang051 = [];
+				var Mang052 = [];
+				var Mang054 = [];
+				var Mang056 = [];
+				var Mang058 = [];
+				var Mang060 = [];
+				var Mang062 = [];
+				var Mang064 = [];
+				var Mang066 = [];
+				var Mang067 = [];
+				var Mang068 = [];
+				var Mang070 = [];
+				var Mang072 = [];
+				var Mang074 = [];
+				var Mang075 = [];
+				var Mang077 = [];
+				var Mang079 = [];
+				var Mang080 = [];
+				var Mang082 = [];
+				var Mang083 = [];
+				var Mang084 = [];
+				var Mang086 = [];
+				var Mang087 = [];
+				var Mang089 = [];
+				var Mang091 = [];
+				var Mang092 = [];
+				var Mang093 = [];
+				var Mang094 = [];
+				var Mang095 = [];
+				var Mang096 = [];
+				var Sun = [];
+					snapshort.forEach((element) => {
+							ghinhandata
+									.child(element.key)
+									.child('DataCard')
+									.on('value', (datas) => {
+											datas.forEach((elementChinhThuc) => {
+												const key = elementChinhThuc.key;
+												const dob = elementChinhThuc.val().id;
 							
-                if(demso === "001")
-                {
-									Mang001.push({
-                        key : key,
-                        dob : demso
-                    })
-                }
-                if(demso === "002")
-                {
-										Mang002.push({
-                        key : key,
-                        dob : demso
-                    })
-                }
-                if(demso === "004")
-                {
-                    Mang004.push({
-                        key : key,
-                        dob : demso
-                    })
-                }
-                if(demso === "006")
-                {
-                    Mang006.push({
-                        key : key,
-                        dob : demso
-                    })
-                }
-                if(demso === "008")
-                {
-                    Mang008.push({
-                        key : key,
-                        dob : demso
-                    })
-                }
-                if(demso === "010")
-                {
-									Mang010.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "011")
-                {
-									Mang011.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "012")
-                {
-									Mang012.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "014")
-                {
-									Mang014.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "015")
-                {
-									Mang015.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "017")
-                {
-									Mang017.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "019")
-                {
-									Mang019.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "020")
-                {
-									Mang020.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "022")
-                {
-									Mang022.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "024")
-                {
-									Mang024.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "025")
-                {
-									Mang025.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "026")
-                {
-									Mang026.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "027")
-                {
-									Mang027.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "030")
-                {
-									Mang030.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "031")
-                {
-									Mang031.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "033")
-                {
-									Mang033.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "034")
-                {
-									Mang034.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "035")
-                {
-									Mang035.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "036")
-                {
-									Mang036.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "037")
-                {
-									Mang037.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "038")
-                {
-									Mang038.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "040")
-                {
-									Mang040.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "042")
-                {
-									Mang042.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "044")
-                {
-									Mang044.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "045")
-                {
-									Mang045.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "046")
-                {
-									Mang046.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "048")
-                {
-									Mang048.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "049")
-                {
-									Mang049.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "051")
-                {
-									Mang051.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "052")
-                {
-									Mang052.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "054")
-                {
-									Mang054.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "056")
-                {
-									Mang056.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "058")
-                {
-									Mang058.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "060")
-                {
-									Mang060.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "062")
-                {
-									Mang062.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "064")
-                {
-									Mang064.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "066")
-                {
-									Mang066.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "067")
-                {
-									Mang067.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "068")
-                {
-									Mang068.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "070")
-                {
-									Mang070.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "072")
-                {
-									Mang072.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "074")
-                {
-									Mang074.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "075")
-                {
-									Mang075.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "077")
-                {
-									Mang077.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "079")
-                {
-									Mang079.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "080")
-                {
-									Mang080.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "082")
-                {
-									Mang082.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "083")
-                {
-									Mang083.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "084")
-                {
-									Mang084.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "086")
-                {
-									Mang086.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "087")
-                {
-									Mang087.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "089")
-                {
-									Mang089.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "091")
-                {
-									Mang091.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "092")
-                {
-									Mang092.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "093")
-                {
-									Mang093.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "094")
-                {
-									Mang094.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "095")
-                {
-									Mang095.push({
-                        key : key,
-                        dob : demso
-                    })
-								}
-								if(demso === "096")
-                {
-									Mang096.push({
-                        key : key,
-                        dob : demso
-                    })
-                }
-                Sun.push({
-                    key : key
-                })
-            });
-            this.setState({
-							data001 : Mang001,
-							data002 : Mang002,
-							data004 : Mang004,
-							data006 : Mang006,
-							data008 : Mang008,
-							data010 : Mang010,
-							data011 : Mang011,
-							data012 : Mang012,
-							data014 : Mang014,
-							data015 : Mang015,
-							data017 : Mang017,
-							data019 : Mang019,
-							data020 : Mang020,
-							data022 : Mang022,
-							data024 : Mang024,
-							data025 : Mang025,
-							data026 : Mang026,
-							data027 : Mang027,
-							data030 : Mang030,
-							data031 : Mang031,
-							data033 : Mang033,
-							data034 : Mang034,
-							data035 : Mang035,
-							data036 : Mang036,
-							data037 : Mang037,
-							data038 : Mang038,
-							data040 : Mang040,
-							data042 : Mang042,
-							data044 : Mang044,
-							data045 : Mang045,
-							data046 : Mang046,
-							data048 : Mang048,
-							data049 : Mang049,
-							data051 : Mang051,
-							data052 : Mang052,
-							data054 : Mang054,
-							data056 : Mang056,
-							data058 : Mang058,
-							data060 : Mang060,
-							data062 : Mang062,
-							data064 : Mang064,
-							data066 : Mang066,
-							data067 : Mang067,
-							data068 : Mang068,
-							data070 : Mang070,
-							data072 : Mang072,
-							data074 : Mang074,
-							data075 : Mang075,
-							data077 : Mang077,
-							data079 : Mang079,
-							data080 : Mang080,
-							data082 : Mang082,
-							data083 : Mang083,
-							data084 : Mang084,
-							data086 : Mang086,
-							data087 : Mang087,
-							data089 : Mang089,
-							data091 : Mang091,
-							data092 : Mang092,
-							data093 : Mang093,
-							data094 : Mang094,
-							data095 : Mang095,
-							data096 : Mang096,
-							datasun : Sun
-            });
-        })
+												const demso =  dob.slice(0,3);
+											
+												if(demso === "001")
+												{
+													Mang001.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "002")
+												{
+														Mang002.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "004")
+												{
+														Mang004.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "006")
+												{
+														Mang006.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "008")
+												{
+														Mang008.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "010")
+												{
+													Mang010.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "011")
+												{
+													Mang011.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "012")
+												{
+													Mang012.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "014")
+												{
+													Mang014.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "015")
+												{
+													Mang015.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "017")
+												{
+													Mang017.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "019")
+												{
+													Mang019.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "020")
+												{
+													Mang020.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "022")
+												{
+													Mang022.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "024")
+												{
+													Mang024.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "025")
+												{
+													Mang025.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "026")
+												{
+													Mang026.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "027")
+												{
+													Mang027.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "030")
+												{
+													Mang030.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "031")
+												{
+													Mang031.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "033")
+												{
+													Mang033.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "034")
+												{
+													Mang034.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "035")
+												{
+													Mang035.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "036")
+												{
+													Mang036.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "037")
+												{
+													Mang037.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "038")
+												{
+													Mang038.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "040")
+												{
+													Mang040.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "042")
+												{
+													Mang042.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "044")
+												{
+													Mang044.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "045")
+												{
+													Mang045.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "046")
+												{
+													Mang046.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "048")
+												{
+													Mang048.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "049")
+												{
+													Mang049.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "051")
+												{
+													Mang051.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "052")
+												{
+													Mang052.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "054")
+												{
+													Mang054.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "056")
+												{
+													Mang056.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "058")
+												{
+													Mang058.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "060")
+												{
+													Mang060.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "062")
+												{
+													Mang062.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "064")
+												{
+													Mang064.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "066")
+												{
+													Mang066.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "067")
+												{
+													Mang067.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "068")
+												{
+													Mang068.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "070")
+												{
+													Mang070.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "072")
+												{
+													Mang072.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "074")
+												{
+													Mang074.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "075")
+												{
+													Mang075.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "077")
+												{
+													Mang077.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "079")
+												{
+													Mang079.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "080")
+												{
+													Mang080.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "082")
+												{
+													Mang082.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "083")
+												{
+													Mang083.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "084")
+												{
+													Mang084.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "086")
+												{
+													Mang086.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "087")
+												{
+													Mang087.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "089")
+												{
+													Mang089.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "091")
+												{
+													Mang091.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "092")
+												{
+													Mang092.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "093")
+												{
+													Mang093.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "094")
+												{
+													Mang094.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "095")
+												{
+													Mang095.push({
+																key : key,
+																dob : demso
+														})
+												}
+												if(demso === "096")
+												{
+													Mang096.push({
+																key : key,
+																dob : demso
+														})
+												}
+												Sun.push({
+														key : key
+												})
+											});
+									});
+					})
+					this.setState({
+						data001 : Mang001,
+						data002 : Mang002,
+						data004 : Mang004,
+						data006 : Mang006,
+						data008 : Mang008,
+						data010 : Mang010,
+						data011 : Mang011,
+						data012 : Mang012,
+						data014 : Mang014,
+						data015 : Mang015,
+						data017 : Mang017,
+						data019 : Mang019,
+						data020 : Mang020,
+						data022 : Mang022,
+						data024 : Mang024,
+						data025 : Mang025,
+						data026 : Mang026,
+						data027 : Mang027,
+						data030 : Mang030,
+						data031 : Mang031,
+						data033 : Mang033,
+						data034 : Mang034,
+						data035 : Mang035,
+						data036 : Mang036,
+						data037 : Mang037,
+						data038 : Mang038,
+						data040 : Mang040,
+						data042 : Mang042,
+						data044 : Mang044,
+						data045 : Mang045,
+						data046 : Mang046,
+						data048 : Mang048,
+						data049 : Mang049,
+						data051 : Mang051,
+						data052 : Mang052,
+						data054 : Mang054,
+						data056 : Mang056,
+						data058 : Mang058,
+						data060 : Mang060,
+						data062 : Mang062,
+						data064 : Mang064,
+						data066 : Mang066,
+						data067 : Mang067,
+						data068 : Mang068,
+						data070 : Mang070,
+						data072 : Mang072,
+						data074 : Mang074,
+						data075 : Mang075,
+						data077 : Mang077,
+						data079 : Mang079,
+						data080 : Mang080,
+						data082 : Mang082,
+						data083 : Mang083,
+						data084 : Mang084,
+						data086 : Mang086,
+						data087 : Mang087,
+						data089 : Mang089,
+						data091 : Mang091,
+						data092 : Mang092,
+						data093 : Mang093,
+						data094 : Mang094,
+						data095 : Mang095,
+						data096 : Mang096,
+						datasun : Sun
+					});
+			})
     }
 
     phantich1 = () => {

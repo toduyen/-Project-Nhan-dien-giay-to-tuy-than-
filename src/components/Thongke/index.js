@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import ThongBaoCapCaoCo from './ThongTinTongQuat/SoLuongDanSoNam';
-import {firebaseone} from '../../Firebase/firebaseconnectio';
+import {firebaseDemo} from '../../Firebase/firebaseconnectio';
 import CHARTINFOSS from './ThapGiayToVaDanSo/ThapDanSoHienTai';
 import Search2 from './DanhsachNguoiDan/Form/FormSearch';
 import KOOBAY from './DanhsachNguoiDan/DuLieuNguoiDan';
@@ -18,65 +18,72 @@ class FormInForVsEdit extends Component {
     }
 
     componentWillMount() {
-        firebaseone.on('value', (dats) => {
-            var Mang = [];
-            dats.forEach(element => {
-                const key = element.key;
-                const id = element
-                    .val()
-                    .id;
-                const name = element
-                    .val()
-                    .name;
-                const dob = element
-                    .val()
-                    .dob;
-                const home = element
-                    .val()
-                    .home;
-                const address = element
-                    .val()
-                    .address;
-                const doe = element
-                    .val()
-                    .doe;
-                const sex = element
-                    .val()
-                    .sex;
-                const ethnicity = element
-                    .val()
-                    .ethnicity;
-                const tonhiao = element
-                    .val()
-                    .tonhiao;
-                const ngayhethan = element
-                    .val()
-                    .ngayhethan;
-                const noicap = element
-                    .val()
-                    .noicap;
-                const images = element
-                    .val()
-                    .images;
-                Mang.push({
-                    key: key,
-                    id: id,
-                    dob: dob,
-                    home: home,
-                    address: address,
-                    name: name,
-                    doe: doe,
-                    sex: sex,
-                    ethnicity: ethnicity,
-                    tonhiao: tonhiao,
-                    ngayhethan: ngayhethan,
-                    noicap: noicap,
-                    images: images
-                })
-            });
-            this.setState({data: Mang})
-        });
-
+				let ghinhandata = firebaseDemo;
+				ghinhandata.on('value', (snapshort) => {
+					var Mang = [];
+						snapshort.forEach((element) => {
+								ghinhandata
+										.child(element.key)
+										.child('DataCard')
+										.on('value', (datas) => {
+												datas.forEach((elementChinhThuc) => {
+													const key = elementChinhThuc.key;
+													const id = elementChinhThuc
+															.val()
+															.id;
+													const name = elementChinhThuc
+															.val()
+															.name;
+													const dob = elementChinhThuc
+															.val()
+															.dob;
+													const home = elementChinhThuc
+															.val()
+															.home;
+													const address = elementChinhThuc
+															.val()
+															.address;
+													const doe = elementChinhThuc
+															.val()
+															.doe;
+													const sex = elementChinhThuc
+															.val()
+															.sex;
+													const ethnicity = elementChinhThuc
+															.val()
+															.ethnicity;
+													const tonhiao = elementChinhThuc
+															.val()
+															.tonhiao;
+													const ngayhethan = elementChinhThuc
+															.val()
+															.ngayhethan;
+													const noicap = elementChinhThuc
+															.val()
+															.noicap;
+													const images = elementChinhThuc
+															.val()
+															.images;
+													Mang.push({
+															key: key,
+															id: id,
+															dob: dob,
+															home: home,
+															address: address,
+															name: name,
+															doe: doe,
+															sex: sex,
+															ethnicity: ethnicity,
+															tonhiao: tonhiao,
+															ngayhethan: ngayhethan,
+															noicap: noicap,
+															images: images
+													})
+												});
+										});
+						})
+						this.setState({data: Mang})
+				})
         if (localStorage.getItem('mahoan') === null) {
             localStorage.setItem('mahoan', JSON.stringify(mahoans))
         } else {

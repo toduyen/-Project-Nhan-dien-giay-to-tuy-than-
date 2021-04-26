@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {firebaseone} from '../../../Firebase/firebaseconnectio';
+import {firebaseDemo} from '../../../Firebase/firebaseconnectio';
 import ChartInFo2 from './ThapTileGiayTo';
 import dl from '../../../Data/DulieuGioiTInh.json';
 import {connect} from 'react-redux';
@@ -14,25 +14,35 @@ class ChartInFo extends Component {
         };
     }
     componentWillMount() {
-        firebaseone.on('value', (datas) => {
+
+        let ghinhandata = firebaseDemo;
+        ghinhandata.on('value', (snapshort) => {
             var Mang = [];
             var Mang2 = [];
             var sun = [];
-            datas.forEach(element => {
-                const key = element.key;
-                const sex = element
-                    .val()
-                    .sex;
-                if (sex === "NAM") {
-                    Mang.push({key: key, sex: sex})
-                }
-                if (sex === "NỮ") {
-                    Mang2.push({key: key, sex: sex})
-                }
-                sun.push({key: key})
-            });
+            snapshort.forEach((element) => {
+                ghinhandata
+                    .child(element.key)
+                    .child('DataCard')
+                    .on('value', (datas) => {
+                        datas.forEach((elementChinhThuc) => {
+                            const key = elementChinhThuc.key;
+                            const sex = elementChinhThuc
+                                .val()
+                                .sex;
+                            if (sex === "NAM") {
+                                Mang.push({key: key, sex: sex})
+                            }
+                            if (sex === "NỮ") {
+                                Mang2.push({key: key, sex: sex})
+                            }
+                            sun.push({key: key})
+                        });
+                    });
+            })
             this.setState({data: Mang, data2: Mang2, datasun: sun});
         })
+
         if (localStorage.getItem('gioitinhrorang') === null) {
             localStorage.setItem('gioitinhrorang', JSON.stringify(dl))
         } else {
@@ -225,9 +235,6 @@ const mapStateToProps = (state, ownProps) => {
 }
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        ThucHIenGetData: (getdata) => {
-            dispatch({type: 'UPER_SEX', getdata})
-        },
         ThuchienthaydoitrangthaiA: () => {
             dispatch({type: 'TRANG_THAI'})
         },
