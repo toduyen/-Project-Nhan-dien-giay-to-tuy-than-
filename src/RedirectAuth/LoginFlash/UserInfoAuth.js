@@ -8,6 +8,7 @@ import fakeAuth from '../FakeAuth';
 import Header from '../../Layout/Header';
 import MenuFullOprion from '../../Layout/Menu'
 import Footer from '../../Layout/Footer';
+
 const AuthButton = (() => fakeAuth.isAuthenticated
     ? (
         <p>
@@ -28,10 +29,23 @@ class UserInfoAuth extends Component {
             uid: null,
             photoURL: null,
             emailVerified: null,
-            data: []
+            data: [],
         };
     }
-
+		componentWillMount() {
+			firebaseDemo.on('value', (dataSnapshort) => {
+				var mang = [];
+				dataSnapshort.forEach((element) => {
+						const key = element.key;
+						const email = element
+								.val()
+								.email;
+						mang.push({email: email,key:key})
+				});
+				this.setState({data: mang});
+		})
+		}
+		
     componentDidMount() {
         firebase
             .auth()
@@ -40,17 +54,6 @@ class UserInfoAuth extends Component {
                     this.authHandler({user});
                 }
             });
-
-        firebaseDemo.on('value', (dataSnapshort) => {
-            var mang = [];
-            dataSnapshort.forEach((element) => {
-                const email = element.val().email;
-                mang.push({email: email})
-            });
-            this.setState({
-                data : mang
-            });
-        })
     }
     authHandler = async authData => {
         // xmZjFzpHjFc2fEYQy1odP62MJaQ2
@@ -86,23 +89,24 @@ class UserInfoAuth extends Component {
 
     sukienTaiDuLieu = () => {
         var mang = [];
-        this.state.data.forEach((item) => {
-            if(item.email.indexOf(this.state.email) != -1)
-            {
-                mang.push(item);
-            }
-        })
-        if(mang.length > 0)
-        {
+        this
+            .state
+            .data
+            .forEach((item) => {
+                if (item.email.indexOf(this.state.email) != -1) {
+                    mang.push(item);
+                }
+            })
+        if (mang.length > 0) {
             console.log(`trùng rồi`)
-        }
-        else if(mang.length === 0)
-        {
+        } else if (mang.length === 0) {
             var info = {};
             info.displayName = this.state.displayName;
             info.email = this.state.email;
             info.uid = this.state.uid;
-            firebaseDemo.push(info);
+            this
+                .props
+                .senDataFirebase(info);
         }
     }
 
@@ -143,6 +147,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         layID: (getString) => {
             dispatch({type: "CHANGE_STATE_LOGIN", getString})
+        },
+        senDataFirebase: (newItem) => {
+            dispatch({type: "INSERT_DATA_USER_OAUTH", newItem})
         }
     }
 }
