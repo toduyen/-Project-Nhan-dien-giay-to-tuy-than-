@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import ReactHTMLTableToExcel from 'react-html-table-to-excel';
-import {firebaseone} from '../../Firebase/firebaseconnectio';
+import {firebaseDemo} from '../../Firebase/firebaseconnectio';
 import Search from './HienThi/DuLieuSearchItem';
 import KOKOBAYs from './HienThi/DuLieuSearch';
 
@@ -14,64 +14,67 @@ class ListTable extends Component {
         };
     }
     componentWillMount() {
-        firebaseone.on('value', (datas) => {
-            var Mang = [];
-            datas.forEach(element => {
-                const key = element.key;
-                const name = element
-                    .val()
-                    .name;
-                const id = element
-                    .val()
-                    .id;
-                const dob = element
-                    .val()
-                    .dob;
-                const home = element
-                    .val()
-                    .home;
-                const address = element
-                    .val()
-                    .address;
-                const sex = element
-                    .val()
-                    .sex;
-                const nationality = element
-                    .val()
-                    .nationality;
-                const doe = element
-                    .val()
-                    .doe;
-                const ethnicity = element
-                    .val()
-                    .ethnicity;
-                const tonhiao = element
-                    .val()
-                    .tonhiao;
-                const ngayhethan = element
-                    .val()
-                    .ngayhethan;
-                const noicap = element
-                    .val()
-                    .noicap;
-                Mang.push({
-                    key: key,
-                    name: name,
-                    id: id,
-                    dob: dob,
-                    home: home,
-                    address: address,
-                    sex: sex,
-                    nationality: nationality,
-                    doe: doe,
-                    ethnicity: ethnicity,
-                    tonhiao: tonhiao,
-                    ngayhethan: ngayhethan,
-                    noicap: noicap
-                })
-            });
-            this.setState({data: Mang})
-        })
+        firebaseDemo
+            .child(JSON.parse(localStorage.getItem('dataUserNamePush')).key)
+            .child('DataCard')
+            .on('value', (datas) => {
+                var Mang = [];
+                datas.forEach(element => {
+                    const key = element.key;
+                    const name = element
+                        .val()
+                        .name;
+                    const id = element
+                        .val()
+                        .id;
+                    const dob = element
+                        .val()
+                        .dob;
+                    const home = element
+                        .val()
+                        .home;
+                    const address = element
+                        .val()
+                        .address;
+                    const sex = element
+                        .val()
+                        .sex;
+                    const nationality = element
+                        .val()
+                        .nationality;
+                    const doe = element
+                        .val()
+                        .doe;
+                    const ethnicity = element
+                        .val()
+                        .ethnicity;
+                    const tonhiao = element
+                        .val()
+                        .tonhiao;
+                    const ngayhethan = element
+                        .val()
+                        .ngayhethan;
+                    const noicap = element
+                        .val()
+                        .noicap;
+                    Mang.push({
+                        key: key,
+                        name: name,
+                        id: id,
+                        dob: dob,
+                        home: home,
+                        address: address,
+                        sex: sex,
+                        nationality: nationality,
+                        doe: doe,
+                        ethnicity: ethnicity,
+                        tonhiao: tonhiao,
+                        ngayhethan: ngayhethan,
+                        noicap: noicap
+                    })
+                });
+                this.setState({data: Mang})
+            })
     }
 
     GhiNhanKietQuaTimKiem = (dl) => {

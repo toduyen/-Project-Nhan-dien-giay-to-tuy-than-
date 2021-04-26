@@ -29,16 +29,15 @@ class UserInfoAuth extends Component {
             uid: null,
             photoURL: null,
             emailVerified: null,
-            data: [],
+            data: []
         };
     }
-		componentWillMount() {
-			if(localStorage.getItem('dataUserNamePush') === null)
-			{
-				localStorage.setItem('dataUserNamePush',JSON.stringify(DataKey));
-			}
-		}
-		
+    componentWillMount() {
+        if (localStorage.getItem('dataUserNamePush') === null) {
+            localStorage.setItem('dataUserNamePush', JSON.stringify(DataKey));
+        }
+    }
+
     componentDidMount() {
         firebase
             .auth()
@@ -48,18 +47,17 @@ class UserInfoAuth extends Component {
                 }
             });
 
-
-						firebaseDemo.on('value', (dataSnapshort) => {
-							var mang = [];
-							dataSnapshort.forEach((element) => {
-									const key = element.key;
-									const email = element
-											.val()
-											.email;
-									mang.push({email: email,key:key})
-							});
-							this.setState({data: mang});
-					})
+        firebaseDemo.on('value', (dataSnapshort) => {
+            var mang = [];
+            dataSnapshort.forEach((element) => {
+                const key = element.key;
+                const email = element
+                    .val()
+                    .email;
+                mang.push({email: email, key: key})
+            });
+            this.setState({data: mang});
+        })
     }
     authHandler = async authData => {
         // xmZjFzpHjFc2fEYQy1odP62MJaQ2
@@ -100,10 +98,10 @@ class UserInfoAuth extends Component {
             .data
             .forEach((item) => {
                 if (item.email.indexOf(this.state.email) != -1) {
-										localStorage.setItem('dataUserNamePush',JSON.stringify(item))
-										
-											mang.push(item);
-										
+                    localStorage.setItem('dataUserNamePush', JSON.stringify(item))
+
+                    mang.push(item);
+
                 }
             })
         if (mang.length > 0) {
