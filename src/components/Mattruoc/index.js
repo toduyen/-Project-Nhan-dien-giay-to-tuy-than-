@@ -409,7 +409,7 @@ class FormText extends Component {
     }
 		thuthoinha = () => {
 			let temp = JSON.parse(localStorage.getItem('mahoan'));
-			this.props.themmoiVaoNutCha(temp);
+			this.props.themmoiVaoNutChaCuaCha(temp);
 			console.log(`hello chao anh em`);
 		}
     render() {
@@ -666,6 +666,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         themmoiVaoNutCha: (getitem) => {
             dispatch({type: 'LAY_DATA', getitem})
         },
+				themmoiVaoNutChaCuaCha: (ganGiatri) => {
+					dispatch({type: 'INSERT_CHILD_FOR_PATHER', ganGiatri})
+				},
         ThuchienthaydoitrangthaiA: () => {
             dispatch({type: 'TRANG_THAI'})
         },

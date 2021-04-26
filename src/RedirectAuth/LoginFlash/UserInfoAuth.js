@@ -6,9 +6,9 @@ import RouterURL from "../../router/DieuHuongUrl";
 import {connect} from "react-redux";
 import fakeAuth from '../FakeAuth';
 import Header from '../../Layout/Header';
-import MenuFullOprion from '../../Layout/Menu'
+import MenuFullOprion from '../../Layout/Menu';
 import Footer from '../../Layout/Footer';
-
+import DataKey from '../../Data/DatakeyUpDataUserName.json';
 const AuthButton = (() => fakeAuth.isAuthenticated
     ? (
         <p>
@@ -33,17 +33,10 @@ class UserInfoAuth extends Component {
         };
     }
 		componentWillMount() {
-			firebaseDemo.on('value', (dataSnapshort) => {
-				var mang = [];
-				dataSnapshort.forEach((element) => {
-						const key = element.key;
-						const email = element
-								.val()
-								.email;
-						mang.push({email: email,key:key})
-				});
-				this.setState({data: mang});
-		})
+			if(localStorage.getItem('dataUserNamePush') === null)
+			{
+				localStorage.setItem('dataUserNamePush',JSON.stringify(DataKey));
+			}
 		}
 		
     componentDidMount() {
@@ -54,6 +47,19 @@ class UserInfoAuth extends Component {
                     this.authHandler({user});
                 }
             });
+
+
+						firebaseDemo.on('value', (dataSnapshort) => {
+							var mang = [];
+							dataSnapshort.forEach((element) => {
+									const key = element.key;
+									const email = element
+											.val()
+											.email;
+									mang.push({email: email,key:key})
+							});
+							this.setState({data: mang});
+					})
     }
     authHandler = async authData => {
         // xmZjFzpHjFc2fEYQy1odP62MJaQ2
@@ -94,11 +100,14 @@ class UserInfoAuth extends Component {
             .data
             .forEach((item) => {
                 if (item.email.indexOf(this.state.email) != -1) {
-                    mang.push(item);
+										localStorage.setItem('dataUserNamePush',JSON.stringify(item))
+										
+											mang.push(item);
+										
                 }
             })
         if (mang.length > 0) {
-            console.log(`trùng rồi`)
+            console.log(`trùng rồi`);
         } else if (mang.length === 0) {
             var info = {};
             info.displayName = this.state.displayName;
