@@ -21,7 +21,8 @@ class BlinkEye extends Component {
             quiz4: 0,
             quiz5: 0,
             antiFake: 0,
-            tempValueAudio: 0
+            tempValueAudio: 0,
+						andeTai : false
         }
         this.hoursInput = React.createRef();
         this.minutesInput = React.createRef();
@@ -301,13 +302,31 @@ class BlinkEye extends Component {
         const {left, all, happy, angry, seconds} = this.state;
         if (seconds === 0) {
             if ((left === 1) && (all === 3) && (happy === 4) && (angry === 5)) {
-                let temp = JSON.parse(localStorage.getItem('mahoan'));
-                this
-                    .props
-                    .ThucHIenGetData(temp);
+							this.setState({
+								andeTai : true
+							});
+              
             }
         }
     }
+
+		thucThiUpdateDataVsButton = () => {
+			let temp = JSON.parse(localStorage.getItem('mahoan'));
+			this.props.ThucHIenGetData(temp);
+		}
+
+		renderButtonUpdateData = () => {
+			if(this.state.andeTai === true)
+			{
+				return(
+					<button type="button" onClick={()=>this.thucThiUpdateDataVsButton()} className="btn mt-4 shadow-lg p-3 mb-5 bg-dark rounded border border-dark text-white"><i className="fas fa-upload"></i></button>
+				)
+			}
+			else
+			{
+				return null
+			}
+		}
     render() {
         const {hours, minutes, seconds} = this.state;
         return (
@@ -334,6 +353,7 @@ class BlinkEye extends Component {
 }
                 {this.displayResult(this.state.left)
 }
+{this.renderButtonUpdateData()}
                 <div hidden>
                     {this.renderBatdau(this.state.quiz5)}
                     {this.renderDisplayAudio2(this.state.quiz4, 30, 40)}

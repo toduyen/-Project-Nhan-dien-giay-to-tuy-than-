@@ -1,4 +1,3 @@
-import reducer1 from './reducer/reducer1';
 import reducer2 from './reducer/reducer2';
 import reducer3 from './reducer/reducer3';
 import reducer4 from './reducer/reducer4';
@@ -15,7 +14,6 @@ import reducerPushDatauser from './reducer/ReducerPushDataUserNameNew';
 var redux = require('redux');
 
 var allreducer = redux.combineReducers({
-    laydata: reducer1,
     updatedata: reducer2,
     xoa: reducer3,
     thuchienluudata: reducer4,

@@ -10,10 +10,6 @@ const firebaseApp = firebase.initializeApp({
     messagingSenderId: "368706777855",
     appId: "1:368706777855:web:230bb006041bcf82"
 });
-
-export const firebaseone = firebase
-    .database()
-    .ref('Note');
 export const firebasetwo = firebase
     .database()
     .ref('Note1');
@@ -26,7 +22,6 @@ export const firebasefor = firebase
 export const firebasefive = firebase
     .database()
     .ref('Note5');
-
 export const firebaseDemo = firebase
     .database()
     .ref('Demo');

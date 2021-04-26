@@ -407,11 +407,6 @@ class FormText extends Component {
 
         this.setState({floatNumber: x});
     }
-		thuthoinha = () => {
-			let temp = JSON.parse(localStorage.getItem('mahoan'));
-			this.props.themmoiVaoNutChaCuaCha(temp);
-			console.log(`hello chao anh em`);
-		}
     render() {
         let ketquasss = ``;
         if (this.state.temp) {
@@ -423,7 +418,6 @@ class FormText extends Component {
         }
         return (
             <div className="thaydoitinha">
-								<button onClick={()=>this.thuthoinha()}>CLIKE ME</button>
                 <div className="input-group mb-3 mt-5">
 
                     <input
@@ -666,9 +660,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         themmoiVaoNutCha: (getitem) => {
             dispatch({type: 'LAY_DATA', getitem})
         },
-				themmoiVaoNutChaCuaCha: (ganGiatri) => {
-					dispatch({type: 'THEMMOI_VAO_NUT_CHA', ganGiatri})
-				},
         ThuchienthaydoitrangthaiA: () => {
             dispatch({type: 'TRANG_THAI'})
         },
