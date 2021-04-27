@@ -96,8 +96,7 @@ class FormTextBack extends Component {
     hamngoai = () => {
         return (this.state.datas[this.state.datas.length - 1]);
     }
-    componentDidMount() {
-
+    componentWillMount() {
         firebasethree.on('value', (datas) => {
             var Mang = [];
             datas.forEach(element => {
@@ -159,7 +158,8 @@ class FormTextBack extends Component {
             var template = JSON.parse(localStorage.getItem('mahoan2'));
             this.setState({data: template})
         }
-
+    }
+    componentDidMount() {
         if (localStorage.getItem('mahoan2') === null) {
             localStorage.setItem('mahoan2', JSON.stringify(mahoan2));
         } else {

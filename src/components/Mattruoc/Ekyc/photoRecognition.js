@@ -31,15 +31,14 @@ class FaceRecognition extends Component {
         };
     }
 
-   componentDidMount() {
-		this.resetState();
-		let _W = document.documentElement.clientWidth;
-		if (_W > MaxWidth) 
-				_W = MaxWidth;
-		this.setState({WIDTH: _W});
-		this.mounting();
-	 }
-	 
+    componentWillMount() {
+        this.resetState();
+        let _W = document.documentElement.clientWidth;
+        if (_W > MaxWidth) 
+            _W = MaxWidth;
+        this.setState({WIDTH: _W});
+        this.mounting();
+    }
 
     mounting = async() => {
         await loadModels();

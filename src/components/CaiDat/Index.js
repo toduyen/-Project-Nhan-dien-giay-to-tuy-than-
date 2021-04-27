@@ -16,43 +16,42 @@ class Infos extends Component {
             data3: ''
         };
     }
-    componentDidMount() {
-			firebasethree.on('value', (datas) => {
-				var Mang = [];
-				datas.forEach(element => {
-						const data = element.val();
-						Mang.push(data);
-				});
-				this.setState({datas: Mang});
-		})
-		firebasefor.on('value', (dataQr) => {
-				var Mang = [];
-				var Mang2 = [];
-				dataQr.forEach(element => {
-						const key = element.key;
-						const queQR = element
-								.val()
-								.queQR;
-						const time = element
-								.val()
-								.time;
-						const time2 = element
-								.val()
-								.time2;
-						const check = element
-								.val()
-								.check;
-						if (check !== "1") {
-								Mang.push({key: key, queQR: queQR, time: time, time2: time2})
-						}
-						if (check === "1") {
-								Mang2.push({key: key, queQR: queQR, time: time, time2: time2})
-						}
-				});
-				this.setState({dataQr: Mang, dataQr2: Mang2})
-		})
-		}
-		
+    componentWillMount() {
+        firebasethree.on('value', (datas) => {
+            var Mang = [];
+            datas.forEach(element => {
+                const data = element.val();
+                Mang.push(data);
+            });
+            this.setState({datas: Mang});
+        })
+        firebasefor.on('value', (dataQr) => {
+            var Mang = [];
+            var Mang2 = [];
+            dataQr.forEach(element => {
+                const key = element.key;
+                const queQR = element
+                    .val()
+                    .queQR;
+                const time = element
+                    .val()
+                    .time;
+                const time2 = element
+                    .val()
+                    .time2;
+                const check = element
+                    .val()
+                    .check;
+                if (check !== "1") {
+                    Mang.push({key: key, queQR: queQR, time: time, time2: time2})
+                }
+                if (check === "1") {
+                    Mang2.push({key: key, queQR: queQR, time: time, time2: time2})
+                }
+            });
+            this.setState({dataQr: Mang, dataQr2: Mang2})
+        })
+    }
 
     phantichthanhcong = () => {
         this

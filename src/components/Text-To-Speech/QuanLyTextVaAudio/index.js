@@ -9,23 +9,22 @@ class DataLanguage extends Component {
             data: []
         };
     }
-		componentDidMount() {
-			firebasetwo.on('value', (datas) => {
-				var Arrat = [];
-				datas.forEach(element => {
-						const key = element.key;
-						const vanbans = element
-								.val()
-								.vanbans;
-						const amthanh = element
-								.val()
-								.amthanh;
-						Arrat.push({key: key, vanbans: vanbans, amthanh: amthanh})
-				});
-				this.setState({data: Arrat})
-		})
-		}
-		
+    componentWillMount() {
+        firebasetwo.on('value', (datas) => {
+            var Arrat = [];
+            datas.forEach(element => {
+                const key = element.key;
+                const vanbans = element
+                    .val()
+                    .vanbans;
+                const amthanh = element
+                    .val()
+                    .amthanh;
+                Arrat.push({key: key, vanbans: vanbans, amthanh: amthanh})
+            });
+            this.setState({data: Arrat})
+        })
+    }
     ShowData = () => {
         if (this.state.data) {
             return this

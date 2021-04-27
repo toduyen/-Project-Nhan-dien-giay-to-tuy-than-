@@ -24,12 +24,12 @@ class cameraEyeBlink extends Component {
         };
     }
 
-   componentDidMount() {
-		loadModels();
-		this.setInputDevice();
-		this.matcher();
-	 }
-	 
+    componentWillMount() {
+        loadModels();
+        this.setInputDevice();
+        this.matcher();
+    }
+
     setInputDevice = () => {
         navigator
             .mediaDevices
@@ -58,9 +58,10 @@ class cameraEyeBlink extends Component {
         }, 1500);
     };
 
-    componentWillUnmount() {
-        clearInterval(this.interval);
-    }
+    componentDidMount() {
+			clearInterval(this.interval);
+		}
+		
 
     capture = async() => {
         if (!!this.webcam.current) {

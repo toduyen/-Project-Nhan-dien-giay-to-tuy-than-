@@ -8,10 +8,9 @@ class ShowDescriptors extends Component {
         };
     }
 
-    componentDidMount() {
-			this.update();
-		}
-		
+    componentWillMount() {
+        this.update();
+    }
 
     componentWillReceiveProps(newProps) {
         this.update(newProps);

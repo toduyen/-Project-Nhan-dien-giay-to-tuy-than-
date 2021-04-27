@@ -8,29 +8,28 @@ class New extends Component {
             data: ''
         };
     }
-    componentDidMount() {
-			firebasetwo.on('value', (datas) => {
-				var Mang = [];
-				datas.forEach(element => {
-						const key = element.key;
-						const amthanh = element
-								.val()
-								.amthanh;
-						const hinhanh = element
-								.val()
-								.hinhanh;
-						const vanbans = element
-								.val()
-								.vanbans;
-						const hastag = element
-								.val()
-								.hashtag;
-						Mang.push({key: key, amthanh: amthanh, hinhanh: hinhanh, vanbans: vanbans, hastag: hastag})
-				});
-				this.setState({data: Mang});
-		})
-		}
-		
+    componentWillMount() {
+        firebasetwo.on('value', (datas) => {
+            var Mang = [];
+            datas.forEach(element => {
+                const key = element.key;
+                const amthanh = element
+                    .val()
+                    .amthanh;
+                const hinhanh = element
+                    .val()
+                    .hinhanh;
+                const vanbans = element
+                    .val()
+                    .vanbans;
+                const hastag = element
+                    .val()
+                    .hashtag;
+                Mang.push({key: key, amthanh: amthanh, hinhanh: hinhanh, vanbans: vanbans, hastag: hastag})
+            });
+            this.setState({data: Mang});
+        })
+    }
 
     Showdatanhauchua = () => {
         if (this.state.data) {

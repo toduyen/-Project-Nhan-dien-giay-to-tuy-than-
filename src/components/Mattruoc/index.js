@@ -128,8 +128,7 @@ class FormText extends Component {
         }
     }
     // WARNING! To be deprecated in React v17. Use componentDidMount instead.
-    componentDidMount() {
-
+    componentWillMount() {
         firebasethree.on('value', (datas) => {
             var Mang = [];
             datas.forEach(element => {
@@ -146,6 +145,8 @@ class FormText extends Component {
             this.setState({data: template})
         }
 
+    }
+    componentDidMount() {
         if (localStorage.getItem('mahoan') === null) {
             localStorage.setItem('mahoan', JSON.stringify(mahoan));
         } else {
@@ -615,9 +616,9 @@ class FormText extends Component {
                                     <div className="form-row">
                                         <div className="form-group col-md-12">
                                             <div className="d-flex justify-content-center">
-
-                                                <Camera onTakePhoto= { (dataUri) => {this.handleTakePhoto(dataUri); } }/>
-
+                                              
+                                                    <Camera onTakePhoto= { (dataUri) => {this.handleTakePhoto(dataUri); } }/>
+                                                
                                             </div>
 
                                         </div>

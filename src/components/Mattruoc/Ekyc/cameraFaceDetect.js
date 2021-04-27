@@ -19,12 +19,17 @@ class CameraFaceDetect extends Component {
         };
     }
 
-  componentDidMount() {
-		loadModels();
-		this.setInputDevice();
-		this.matcher();
-	}
-	
+    componentWillMount() {
+        loadModels();
+        this.setInputDevice();
+        this.matcher();
+
+    }
+
+		componentDidMount() {
+			clearInterval(this.interval);
+		}
+		
 
     setInputDevice = () => {
         navigator
@@ -58,9 +63,6 @@ class CameraFaceDetect extends Component {
         }, 1500);
     };
 
-    componentWillUnmount() {
-        clearInterval(this.interval);
-    }
     capture = async() => {
         if (!!this.webcam.current) {
             await getFullFaceDescription(this.webcam.current.getScreenshot(), inputSize).then(fullDesc => this.setState({fullDesc}));

@@ -13,7 +13,7 @@ class ListTable extends Component {
             dulieuluuvesolanxoa: 0
         };
     }
-    componentDidMount() {
+    componentWillMount() {
         if (JSON.parse(localStorage.getItem('dataUserNamePush')).email === 'toduyen0402@gmail.com') {
 
             let ghinhandata = firebaseDemo;
