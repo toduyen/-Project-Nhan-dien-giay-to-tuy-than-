@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import ThongBaoCapCaoCo from './ThongTinTongQuat/SoLuongDanSoNam';
+import ThongBaoCapCaoCo from './ThongTinTongQuat/ThongTinTongQuatNhat';
 import {firebaseDemo} from '../../Firebase/firebaseconnectio';
 import CHARTINFOSS from './ThapGiayToVaDanSo/ThapDanSoHienTai';
 import Search2 from './DanhsachNguoiDan/Form/FormSearch';
@@ -204,7 +204,6 @@ class FormInForVsEdit extends Component {
 
                 </div>
                 <ThongBaoCapCaoCo
-                    data={this.state.data}
                     KetquaPhantran={() => this.KetquaPhantran()}/>
                 <Search2 luutruduieu2={(dl) => this.luutruduieu(dl)}/>
                 <KOOBAY dulieukiemtim={ketqua}/>

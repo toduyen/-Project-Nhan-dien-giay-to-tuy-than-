@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import {firebaseDemo} from '../../../Firebase/firebaseconnectio';
-import ThongBaoCapCao2 from './SoLuongDanSoNu';
-import GiayToQuanTrong from './SoLuongGiayTo';
 class ThongBaoCapCao extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: []
+            data: [],
+            data2: [],
+            data3: [],
+            data4: [],
+            data5: []
         };
     }
     componentWillMount() {
@@ -14,6 +16,10 @@ class ThongBaoCapCao extends Component {
         let ghinhandata = firebaseDemo;
         ghinhandata.on('value', (snapshort) => {
             var Mang = [];
+            var Mang2 = [];
+            var Mang3 = [];
+            var Mang4 = [];
+            var Mang5 = [];
             snapshort.forEach((element) => {
                 ghinhandata
                     .child(element.key)
@@ -26,11 +32,18 @@ class ThongBaoCapCao extends Component {
                                 .sex;
                             if (sex === "NAM") {
                                 Mang.push({key: key, sex: sex})
+                            } else if (sex === "NỮ") {
+                                Mang2.push({key: key, sex: sex})
+                            } else if (sex === "NAM" || sex === "NỮ") {
+                                Mang3.push({key: key, sex: sex})
+                            } else if (sex === "N/A") {
+                                Mang4.push({key: key, sex: sex})
                             }
+                            Mang5.push({key: key, sex: sex})
                         });
                     });
             })
-            this.setState({data: Mang});
+            this.setState({data: Mang, data2: Mang2, data3: Mang3, data4: Mang4, data5: Mang5});
         })
 
     }
@@ -62,7 +75,7 @@ class ThongBaoCapCao extends Component {
                                 <div className="row no-gutters align-items-center">
                                     <div className="col mr-2">
                                         <div className="text-xs font-weight-bold text-success text-uppercase mb-1">Dân số (Nữ)</div>
-                                        <ThongBaoCapCao2/>
+                                        <div className="h5 mb-0 font-weight-bold text-gray-800 color">{this.state.data2.length}</div>
                                     </div>
                                     <div className="col-auto">
 
@@ -81,7 +94,7 @@ class ThongBaoCapCao extends Component {
                                         <div className="text-xs font-weight-bold text-info text-uppercase mb-1">Các bảng ghi</div>
                                         <div className="row no-gutters align-items-center">
                                             <div className="col-auto">
-                                                <div className="h5 mb-0 mr-3 font-weight-bold text-gray-800 color">{this.props.data.length}</div>
+                                                <div className="h5 mb-0 mr-3 font-weight-bold text-gray-800 color">{this.state.data5.length}</div>
                                             </div>
                                             <div className="col">
                                                 <div className="progress progress-sm mr-2">
@@ -114,7 +127,12 @@ class ThongBaoCapCao extends Component {
                                 <div className="row no-gutters align-items-center">
                                     <div className="col mr-2">
                                         <div className="text-xs font-weight-bold text-warning text-uppercase mb-1">Tỉ lệ giấy tờ</div>
-                                        <GiayToQuanTrong/>
+                                        <div className="h5 mb-0 font-weight-bold text-gray-800 color">
+                                            <span>{this.state.data3.length}</span>
+                                            <span>cccd</span>
+                                            / {this.state.data4.length}
+                                            <span>cmnd</span>
+                                        </div>
                                     </div>
                                     <div className="col-auto">
                                         <i className="fas fa-scroll fa-2x text-gray-300"/>
