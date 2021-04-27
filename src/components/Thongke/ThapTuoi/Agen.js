@@ -21,98 +21,64 @@ class Agen extends Component {
 
     componentWillMount() {
 
-
-
-
-
-			let ghinhandata = firebaseDemo;
-			ghinhandata.on('value', (snapshort) => {
-				var Mang = [];
-				var Mang24 = [];
-				var Mang34 = [];
-				var Mang44 = [];
-				var Mang54 = [];
-				var Mang64 = [];
-				var Sun = [];
-					snapshort.forEach((element) => {
-							ghinhandata
-									.child(element.key)
-									.child('DataCard')
-									.on('value', (datas) => {
-											datas.forEach((elementChinhThuc) => {
-												const key = elementChinhThuc.key;
-												const dob = elementChinhThuc
-														.val()
-														.dob;
-												const demso = this.YearGetNew() - dob.slice(-4);
-												if (demso <= 24) {
-														Mang.push({key: key, dob: demso})
-												}
-												if ((demso) <= 34 && (demso) >= 24) {
-														Mang24.push({key: key, dob: demso})
-												}
-												if ((demso) <= 44 && (demso) >= 34) {
-														Mang34.push({key: key, dob: demso})
-												}
-												if ((demso) <= 54 && (demso) >= 44) {
-														Mang44.push({key: key, dob: demso})
-												}
-												if ((demso) <= 64 && (demso) >= 54) {
-														Mang54.push({key: key, dob: demso})
-												}
-												if ((demso) >= 64) {
-														Mang64.push({key: key, dob: demso})
-												}
-												Sun.push({key: key})
-											});
-									});
-					})
-				  this.setState({
-						data: Mang,
-						data24: Mang24,
-						data34: Mang34,
-						data44: Mang44,
-						data54: Mang54,
-						data64: Mang64,
-						datasun: Sun
-				});
-			})
+        let ghinhandata = firebaseDemo;
+        ghinhandata.on('value', (snapshort) => {
+            var Mang = [];
+            var Mang24 = [];
+            var Mang34 = [];
+            var Mang44 = [];
+            var Mang54 = [];
+            var Mang64 = [];
+            var Sun = [];
+            snapshort.forEach((element) => {
+                ghinhandata
+                    .child(element.key)
+                    .child('DataCard')
+                    .on('value', (datas) => {
+                        datas.forEach((elementChinhThuc) => {
+                            const key = elementChinhThuc.key;
+                            const dob = elementChinhThuc
+                                .val()
+                                .dob;
+                            const demso = this.YearGetNew() - dob.slice(-4);
+                            if (demso <= 24) {
+                                Mang.push({key: key, dob: demso})
+                            }
+                            if ((demso) <= 34 && (demso) >= 24) {
+                                Mang24.push({key: key, dob: demso})
+                            }
+                            if ((demso) <= 44 && (demso) >= 34) {
+                                Mang34.push({key: key, dob: demso})
+                            }
+                            if ((demso) <= 54 && (demso) >= 44) {
+                                Mang44.push({key: key, dob: demso})
+                            }
+                            if ((demso) <= 64 && (demso) >= 54) {
+                                Mang54.push({key: key, dob: demso})
+                            }
+                            if ((demso) >= 64) {
+                                Mang64.push({key: key, dob: demso})
+                            }
+                            Sun.push({key: key})
+                        });
+                    });
+            })
+            this.setState({
+                data: Mang,
+                data24: Mang24,
+                data34: Mang34,
+                data44: Mang44,
+                data54: Mang54,
+                data64: Mang64,
+                datasun: Sun
+            });
+        })
     }
 
-    phantich = () => {
+    HienThiPhanTich = (data) => {
         let tongthe = this.state.datasun.length;
-        let thuctai = this.state.data.length;
+        let thuctai = data.length;
         return Math.ceil((thuctai / tongthe) * 100);
-    }
-
-    Phantich2 = () => {
-        let tongthe = this.state.datasun.length;
-        let thuctai = this.state.data24.length;
-        return Math.ceil((thuctai / tongthe) * 100)
-    }
-
-    Phantich3 = () => {
-        let tongthe = this.state.datasun.length;
-        let thuctai = this.state.data34.length;
-        return Math.ceil((thuctai / tongthe) * 100)
-    }
-
-    Phantich4 = () => {
-        let tongthe = this.state.datasun.length;
-        let thuctai = this.state.data44.length;
-        return Math.ceil((thuctai / tongthe) * 100)
-    }
-
-    Phantich5 = () => {
-        let tongthe = this.state.datasun.length;
-        let thuctai = this.state.data54.length;
-        return Math.ceil((thuctai / tongthe) * 100)
-    }
-
-    Phantich6 = () => {
-        let tongthe = this.state.datasun.length;
-        let thuctai = this.state.data64.length;
-        return Math.ceil((thuctai / tongthe) * 100)
     }
 
     danhgia = () => {
@@ -158,42 +124,48 @@ class Agen extends Component {
                     <small className="ash">Thống kê độ tuổi</small><br/>
                 </div>
                 <dl>
-                    <dd className={"percentage percentage-" + this.phantich()}>
+                    <dd
+                        className={"percentage percentage-" + this.HienThiPhanTich(this.state.data)}>
                         <span
                             className="text"
                             style={{
                             color: 'black'
                         }}>14 - 24</span>
                     </dd>
-                    <dd className={"percentage percentage-" + this.Phantich2()}>
+                    <dd
+                        className={"percentage percentage-" + this.HienThiPhanTich(this.state.data24)}>
                         <span
                             className="text"
                             style={{
                             color: 'black'
                         }}>24 - 34</span>
                     </dd>
-                    <dd className={"percentage percentage-" + this.Phantich3()}>
+                    <dd
+                        className={"percentage percentage-" + this.HienThiPhanTich(this.state.data34)}>
                         <span
                             className="text"
                             style={{
                             color: 'black'
                         }}>34 - 44</span>
                     </dd>
-                    <dd className={"percentage percentage-" + this.Phantich4()}>
+                    <dd
+                        className={"percentage percentage-" + this.HienThiPhanTich(this.state.data44)}>
                         <span
                             className="text"
                             style={{
                             color: 'black'
                         }}>44 - 54</span>
                     </dd>
-                    <dd className={"percentage percentage-" + this.Phantich5()}>
+                    <dd
+                        className={"percentage percentage-" + this.HienThiPhanTich(this.state.data54)}>
                         <span
                             className="text"
                             style={{
                             color: 'black'
                         }}>54 - 64</span>
                     </dd>
-                    <dd className={"percentage percentage-" + this.Phantich6()}>
+                    <dd
+                        className={"percentage percentage-" + this.HienThiPhanTich(this.state.data64)}>
                         <span
                             className="text"
                             style={{

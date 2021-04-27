@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import PhanTich from './Form/Title';
 import Buttonform from './DeleteAndEditModal';
 
 class dulieutimkiemformthongke extends Component {
@@ -44,7 +43,10 @@ class dulieutimkiemformthongke extends Component {
                                                 src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/3c66569873141.560dba0578d41.png"
                                                 alt="Cardimage"/>
                                             <div className="card-img-overlay floatreight">
-                                                <PhanTich ketquaphantich={value.doe}/> {value.name && <p className="card-text">Họ tên :
+                                                {value.doe === "N/A"
+                                                    ? <h4 className="card-title">Chứng minh nhân dân</h4>
+                                                    : <h4 className="card-title">Căn cước công dân</h4>}
+                                                {value.name && <p className="card-text">Họ tên :
                                                     <span>{value.name}</span>
                                                 </p>}
                                                 {value.id && <p className="card-text">Số cmnd :
