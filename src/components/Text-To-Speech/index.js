@@ -130,22 +130,8 @@ class Language_speed_ai extends Component {
             .Thuchienthaydoitrangthai();
     }
 
-    componentWillMount() {
-        if (localStorage.getItem('language') === null || localStorage.getItem('vanban') === null || localStorage.getItem('HinhAnhs') === null || localStorage.getItem('Hashtag') === null) {
-            localStorage.setItem('language', JSON.stringify(ngonngu));
-            localStorage.setItem('vanban', JSON.stringify(vanban));
-            localStorage.setItem('Hashtag', JSON.stringify(Ht));
-            localStorage.setItem('HinhAnhs', JSON.stringify(HinhAnh));
-        } else {
-            var temp = JSON.parse(localStorage.getItem('language'));
-            var temp2 = JSON.parse(localStorage.getItem('vanban'));
-            var temp3 = JSON.parse(localStorage.getItem('HinhAnhs'));
-            var temp4 = JSON.parse(localStorage.getItem('Hashtag'));
-            this.setState({aws: temp, text: temp2, linkimage: temp3, hashtag: temp4});
-        }
-    }
-
     componentDidMount() {
+
         if (localStorage.getItem('language') === null || localStorage.getItem('vanban') === null || localStorage.getItem('HinhAnhs') === null || localStorage.getItem('Hashtag') === null) {
             localStorage.setItem('language', JSON.stringify(ngonngu));
             localStorage.setItem('vanban', JSON.stringify(vanban));

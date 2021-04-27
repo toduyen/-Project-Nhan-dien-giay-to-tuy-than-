@@ -10,12 +10,12 @@ class ChartInFo extends Component {
         this.state = {
             data: [],
             data2: [],
-            datasun: []
+            datasun: [],
+						datasex : dl
         };
     }
-    componentWillMount() {
-
-        let ghinhandata = firebaseDemo;
+    componentDidMount() {
+			 let ghinhandata = firebaseDemo;
         ghinhandata.on('value', (snapshort) => {
             var Mang = [];
             var Mang2 = [];
@@ -49,7 +49,8 @@ class ChartInFo extends Component {
             var temp = JSON.parse(localStorage.getItem('gioitinhrorang'));
             this.setState({datasex: temp});
         }
-    }
+		}
+		
 
     datamen = () => {
         var temp = this.state.data.length;

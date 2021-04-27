@@ -19,12 +19,12 @@ class CameraFaceDetect extends Component {
         };
     }
 
-    componentWillMount() {
-        loadModels();
-        this.setInputDevice();
-        this.matcher();
-
-    }
+  componentDidMount() {
+		loadModels();
+		this.setInputDevice();
+		this.matcher();
+	}
+	
 
     setInputDevice = () => {
         navigator

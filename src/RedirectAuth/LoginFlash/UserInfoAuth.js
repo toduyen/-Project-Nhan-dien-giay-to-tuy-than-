@@ -32,11 +32,6 @@ class UserInfoAuth extends Component {
             data: []
         };
     }
-    componentWillMount() {
-        if (localStorage.getItem('dataUserNamePush') === null) {
-            localStorage.setItem('dataUserNamePush', JSON.stringify(DataKey));
-        }
-    }
 
     componentDidMount() {
         firebase
@@ -58,6 +53,9 @@ class UserInfoAuth extends Component {
             });
             this.setState({data: mang});
         })
+				if (localStorage.getItem('dataUserNamePush') === null) {
+					localStorage.setItem('dataUserNamePush', JSON.stringify(DataKey));
+			}
     }
     authHandler = async authData => {
         // xmZjFzpHjFc2fEYQy1odP62MJaQ2

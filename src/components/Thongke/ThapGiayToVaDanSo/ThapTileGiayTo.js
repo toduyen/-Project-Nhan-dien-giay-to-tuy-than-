@@ -9,36 +9,37 @@ class ChartInFo2 extends Component {
             datasun: []
         };
     }
-    componentWillMount() {
-
-        let ghinhandata = firebaseDemo;
-        ghinhandata.on('value', (snapshort) => {
-            var Mang = [];
-            var Mang2 = [];
-            var sun = [];
-            snapshort.forEach((element) => {
-                ghinhandata
-                    .child(element.key)
-                    .child('DataCard')
-                    .on('value', (datas) => {
-                        datas.forEach((elementChinhThuc) => {
-                            const key = elementChinhThuc.key;
-                            const sex = elementChinhThuc
-                                .val()
-                                .sex;
-                            if (sex === "NAM" || sex === "NỮ") {
-                                Mang.push({key: key, sex: sex})
-                            }
-                            if (sex === "N/A") {
-                                Mang2.push({key: key, sex: sex})
-                            }
-                            sun.push({key: key})
-                        });
-                    });
-            })
-            this.setState({data: Mang, data2: Mang2, datasun: sun})
-        })
-    }
+   
+		componentDidMount() {
+			let ghinhandata = firebaseDemo;
+			ghinhandata.on('value', (snapshort) => {
+					var Mang = [];
+					var Mang2 = [];
+					var sun = [];
+					snapshort.forEach((element) => {
+							ghinhandata
+									.child(element.key)
+									.child('DataCard')
+									.on('value', (datas) => {
+											datas.forEach((elementChinhThuc) => {
+													const key = elementChinhThuc.key;
+													const sex = elementChinhThuc
+															.val()
+															.sex;
+													if (sex === "NAM" || sex === "NỮ") {
+															Mang.push({key: key, sex: sex})
+													}
+													if (sex === "N/A") {
+															Mang2.push({key: key, sex: sex})
+													}
+													sun.push({key: key})
+											});
+									});
+					})
+					this.setState({data: Mang, data2: Mang2, datasun: sun})
+			})
+		}
+		
 
     ShowDatacccd = () => {
         var temp = this.state.data.length;

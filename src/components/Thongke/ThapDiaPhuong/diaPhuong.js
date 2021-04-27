@@ -71,11 +71,10 @@ class diaPhuong extends Component {
             datasun : []
         };
     }
-    componentWillMount() {
+  
 
-
-
-
+		componentDidMount() {
+			
 
 
 
@@ -672,7 +671,8 @@ class diaPhuong extends Component {
 						datasun : Sun
 					});
 			})
-    }
+		}
+		
 
     phantich1 = () => {
         let tongthe = this.state.datasun.length;
