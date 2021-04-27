@@ -11,7 +11,8 @@ const reducer2 = (state = initState2, action) => {
             id : action.getupdate.id,
             dob : action.getupdate.dob,
             home : action.getupdate.home,
-            address : action.getupdate.address
+            address : action.getupdate.address,
+						sex : action.getupdate.sex
         })
         return{...state,Nhandata:action.getupdate}
         default:

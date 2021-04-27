@@ -4,12 +4,13 @@ class Buttonform extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            key: this.props.thongtincaptinh.key,
-            name: this.props.thongtincaptinh.name,
-            id: this.props.thongtincaptinh.id,
-            dob: this.props.thongtincaptinh.dob,
-            home: this.props.thongtincaptinh.home,
-            address: this.props.thongtincaptinh.address
+            key: this.props.thongtincaptinhThongke.key,
+            name: this.props.thongtincaptinhThongke.name,
+            id: this.props.thongtincaptinhThongke.id,
+            dob: this.props.thongtincaptinhThongke.dob,
+            home: this.props.thongtincaptinhThongke.home,
+            address: this.props.thongtincaptinhThongke.address,
+						sex: this.props.thongtincaptinhThongke.sex
         };
     }
 
@@ -28,6 +29,7 @@ class Buttonform extends Component {
         info.dob = this.state.dob;
         info.home = this.state.home;
         info.address = this.state.address;
+				info.sex = this.state.sex;
         this
             .props
             .ThucHienUpdatesss(info);
@@ -40,7 +42,7 @@ class Buttonform extends Component {
     }
 
     ShowLoa = () => {
-        if (this.props.thongtincaptinh.doe === "N/A") {
+        if (this.props.thongtincaptinhThongke.doe === "N/A") {
             return (1)
         } else {
             return (2)
@@ -53,19 +55,19 @@ class Buttonform extends Component {
                     type="button"
                     className="btn btn-primary right"
                     data-toggle="modal"
-                    data-target={'#exampleModalCenter' + this.props.thongtincaptinh.key}>
+                    data-target={'#exampleModalCenter' + this.props.thongtincaptinhThongke.key}>
                     <i className="fas fa-edit"></i>
                 </button>
                 <button
                     type="button"
                     className="btn btn-warning right"
-                    onClick={(uuid) => this.XoaDele(this.props.thongtincaptinh.key)}>
+                    onClick={(uuid) => this.XoaDele(this.props.thongtincaptinhThongke.key)}>
                     <i className="fas fa-user-minus"></i>
                 </button>
 
                 <div
                     className="modal fade"
-                    id={'exampleModalCenter' + this.props.thongtincaptinh.key}
+                    id={'exampleModalCenter' + this.props.thongtincaptinhThongke.key}
                     tabIndex={-1}
                     role="dialog"
                     aria-labelledby="exampleModalCenterTitle"
@@ -87,7 +89,7 @@ class Buttonform extends Component {
                                             <input
                                                 type="text"
                                                 onChange={(event) => this.IsChange(event)}
-                                                defaultValue={this.props.thongtincaptinh.name}
+                                                defaultValue={this.props.thongtincaptinhThongke.name}
                                                 name="name"
                                                 className="form-control"
                                                 aria-describedby="helpId"
@@ -97,7 +99,7 @@ class Buttonform extends Component {
                                             <input
                                                 type="text"
                                                 onChange={(event) => this.IsChange(event)}
-                                                defaultValue={this.props.thongtincaptinh.id}
+                                                defaultValue={this.props.thongtincaptinhThongke.id}
                                                 name="id"
                                                 className="form-control"
                                                 aria-describedby="helpId"
@@ -107,7 +109,7 @@ class Buttonform extends Component {
                                             <input
                                                 type="text"
                                                 onChange={(event) => this.IsChange(event)}
-                                                defaultValue={this.props.thongtincaptinh.dob}
+                                                defaultValue={this.props.thongtincaptinhThongke.dob}
                                                 name="dob"
                                                 className="form-control"
                                                 aria-describedby="helpId"
@@ -115,7 +117,7 @@ class Buttonform extends Component {
                                         </div>
                                         <div className="form-group">
                                             <textarea
-                                                defaultValue={this.props.thongtincaptinh.home}
+                                                defaultValue={this.props.thongtincaptinhThongke.home}
                                                 onChange={(event) => this.IsChange(event)}
                                                 name="home"
                                                 className="form-control"
@@ -124,7 +126,7 @@ class Buttonform extends Component {
                                         </div>
                                         <div className="form-group">
                                             <textarea
-                                                defaultValue={this.props.thongtincaptinh.address}
+                                                defaultValue={this.props.thongtincaptinhThongke.address}
                                                 onChange={(event) => this.IsChange(event)}
                                                 name="address"
                                                 className="form-control"

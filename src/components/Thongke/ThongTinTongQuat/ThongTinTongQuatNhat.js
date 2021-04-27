@@ -11,42 +11,42 @@ class ThongBaoCapCao extends Component {
             data5: []
         };
     }
-    componentWillMount() {
+		componentDidMount() {
+			let ghinhandata = firebaseDemo;
+			ghinhandata.on('value', (snapshort) => {
+					var Mang = [];
+					var Mang2 = [];
+					var Mang3 = [];
+					var Mang4 = [];
+					var Mang5 = [];
+					snapshort.forEach((element) => {
+							ghinhandata
+									.child(element.key)
+									.child('DataCard')
+									.on('value', (datas) => {
+											datas.forEach((elementChinhThuc) => {
+													const key = elementChinhThuc.key;
+													const sex = elementChinhThuc
+															.val()
+															.sex;
+													if (sex === "NAM") {
+															Mang.push({key: key, sex: sex})
+													} if (sex === "NỮ") {
+															Mang2.push({key: key, sex: sex})
+													} if (sex === "NAM" || sex === "NỮ") {
+															Mang3.push({key: key, sex: sex})
+													} if (sex === "N/A") {
+															Mang4.push({key: key, sex: sex})
+													}
+													Mang5.push({key: key, sex: sex})
+											});
+									});
+					})
+					this.setState({data: Mang, data2: Mang2, data3: Mang3, data4: Mang4, data5: Mang5});
+			})
 
-        let ghinhandata = firebaseDemo;
-        ghinhandata.on('value', (snapshort) => {
-            var Mang = [];
-            var Mang2 = [];
-            var Mang3 = [];
-            var Mang4 = [];
-            var Mang5 = [];
-            snapshort.forEach((element) => {
-                ghinhandata
-                    .child(element.key)
-                    .child('DataCard')
-                    .on('value', (datas) => {
-                        datas.forEach((elementChinhThuc) => {
-                            const key = elementChinhThuc.key;
-                            const sex = elementChinhThuc
-                                .val()
-                                .sex;
-                            if (sex === "NAM") {
-                                Mang.push({key: key, sex: sex})
-                            } else if (sex === "NỮ") {
-                                Mang2.push({key: key, sex: sex})
-                            } else if (sex === "NAM" || sex === "NỮ") {
-                                Mang3.push({key: key, sex: sex})
-                            } else if (sex === "N/A") {
-                                Mang4.push({key: key, sex: sex})
-                            }
-                            Mang5.push({key: key, sex: sex})
-                        });
-                    });
-            })
-            this.setState({data: Mang, data2: Mang2, data3: Mang3, data4: Mang4, data5: Mang5});
-        })
-
-    }
+		}
+		
     render() {
         return (
             <div className="container-fluid">

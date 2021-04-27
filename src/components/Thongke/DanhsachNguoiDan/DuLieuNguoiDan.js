@@ -26,7 +26,7 @@ class dulieutimkiemformthongke extends Component {
                                             <span>{value.id}</span>
                                         </button>
                                     </h5>
-                                    <Buttonform thongtincaptinh={value}/>
+                                    <Buttonform thongtincaptinhThongke={value}/>
                                 </div>
                                 <div
                                     id={'collapseTwo' + value.key}
