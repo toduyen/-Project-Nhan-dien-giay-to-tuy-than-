@@ -72,23 +72,23 @@ class ChartInFo extends Component {
     }
 
     ShowDataAlear = () => {
-        if (this.state.datasex.nam > this.state.datasex.nu) {
+        if (this.state.datasex[0].nam > this.state.datasex[0].nu) {
             return (
                 <div className="alert alert-primary" role="alert">
                     Giới tinh nam nhiều hơn giới tính nữ :
-                    <a href="/" className="alert-link">{this.state.datasex.nam}
+                    <a href="/" className="alert-link">{this.state.datasex[0].nam}
                         %</a>. Hãy tiếp tục theo dõi !.
                 </div>
             )
-        } else if (this.state.datasex.nam < this.state.datasex.nu) {
+        } else if (this.state.datasex[0].nam < this.state.datasex[0].nu) {
             return (
                 <div className="alert alert-secondary" role="alert">
                     Giới tinh nữ nhiều hơn giới tính nam :
-                    <a href="/" className="alert-link">{this.state.datasex.nu}
+                    <a href="/" className="alert-link">{this.state.datasex[0].nu}
                         %</a>. Hãy tiếp tục theo dõi !.
                 </div>
             )
-        } else if (this.state.datasex.nam === this.state.datasex.nu) {
+        } else if (this.state.datasex[0].nam === this.state.datasex[0].nu) {
             return (
                 <div className="alert alert-dark" role="alert">
                     Tỉ lệ nam nữ cân bằng bạn làm rất tốt
@@ -99,6 +99,7 @@ class ChartInFo extends Component {
     }
 
     render() {
+			console.log(this.state.datasex);
         $(document)
             .ready(function () {
                 columnChart();
