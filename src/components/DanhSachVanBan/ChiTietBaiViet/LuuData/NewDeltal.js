@@ -9,28 +9,29 @@ class NewDeltal extends Component {
             data: []
         };
     }
-    componentWillMount() {
-        firebasetwo.on('value', (datas) => {
-            var Mang = [];
-            datas.forEach(element => {
-                const key = element.key;
-                const amthanh = element
-                    .val()
-                    .amthanh;
-                const hashtag = element
-                    .val()
-                    .hashtag;
-                const hinhanh = element
-                    .val()
-                    .hinhanh;
-                const vanbans = element
-                    .val()
-                    .vanbans;
-                Mang.push({key: key, amthanh: amthanh, hashtag: hashtag, hinhanh: hinhanh, vanbans: vanbans})
-            });
-            this.setState({data: Mang});
-        })
-    }
+   componentDidMount() {
+		firebasetwo.on('value', (datas) => {
+			var Mang = [];
+			datas.forEach(element => {
+					const key = element.key;
+					const amthanh = element
+							.val()
+							.amthanh;
+					const hashtag = element
+							.val()
+							.hashtag;
+					const hinhanh = element
+							.val()
+							.hinhanh;
+					const vanbans = element
+							.val()
+							.vanbans;
+					Mang.push({key: key, amthanh: amthanh, hashtag: hashtag, hinhanh: hinhanh, vanbans: vanbans})
+			});
+			this.setState({data: Mang});
+	})
+	 }
+	 
 
     showcascbaiviet = () => {
         if (this.state.data) {

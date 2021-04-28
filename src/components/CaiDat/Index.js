@@ -16,7 +16,8 @@ class Infos extends Component {
             data3: ''
         };
     }
-    componentWillMount() {
+
+    componentDidMount() {
         firebasethree.on('value', (datas) => {
             var Mang = [];
             datas.forEach(element => {
