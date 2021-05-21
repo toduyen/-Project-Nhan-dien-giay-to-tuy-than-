@@ -98,80 +98,60 @@ class FormTextBack extends Component {
     }
     componentDidMount() {
 
-			firebasethree.on('value', (datas) => {
-				var Mang = [];
-				datas.forEach(element => {
-						const data = element.val();
-						Mang.push(data)
-				});
-				this.setState({datas: Mang});
-		})
+        firebasethree.on('value', (datas) => {
+            var Mang = [];
+            datas.forEach(element => {
+                const data = element.val();
+                Mang.push(data)
+            });
+            this.setState({datas: Mang});
+        })
 
-		if (JSON.parse(localStorage.getItem('dataUserNamePush')).email === 'toduyen0402@gmail.com') {
+        if (JSON.parse(localStorage.getItem('dataUserNamePush')).email === 'toduyen0402@gmail.com') {
 
-				let ghinhandata = firebaseDemo;
-				ghinhandata.on('value', (snapshort) => {
-						var Mang2 = [];
-						snapshort.forEach((element) => {
-								ghinhandata
-										.child(element.key)
-										.child('DataCard')
-										.on('value', (datas) => {
-												datas.forEach((elementChinhThuc) => {
-														const stt = elementChinhThuc.key;
-														const key = elementChinhThuc
-																.val()
-																.key;
-														const name = elementChinhThuc
-																.val()
-																.name;
-														Mang2.push({stt: stt, key: key, name: name})
-												});
-										});
-						})
-						this.setState({data2: Mang2});
-				})
-		} else {
+            let ghinhandata = firebaseDemo;
+            ghinhandata.on('value', (snapshort) => {
+                var Mang2 = [];
+                snapshort.forEach((element) => {
+                    ghinhandata
+                        .child(element.key)
+                        .child('DataCard')
+                        .on('value', (datas) => {
+                            datas.forEach((elementChinhThuc) => {
+                                const stt = elementChinhThuc.key;
+                                const key = elementChinhThuc
+                                    .val()
+                                    .key;
+                                const name = elementChinhThuc
+                                    .val()
+                                    .name;
+                                Mang2.push({stt: stt, key: key, name: name})
+                            });
+                        });
+                })
+                this.setState({data2: Mang2});
+            })
+        } else {
 
-				firebaseDemo
-						.child(JSON.parse(localStorage.getItem('dataUserNamePush')).key)
-						.child('DataCard')
-						.on('value', (datas) => {
-								var Mang2 = [];
-								datas.forEach(element => {
-										const stt = element.key;
-										const key = element
-												.val()
-												.key;
-										const name = element
-												.val()
-												.name;
-										Mang2.push({stt: stt, key: key, name: name})
-								});
-								this.setState({data2: Mang2});
-						})
+            firebaseDemo
+                .child(JSON.parse(localStorage.getItem('dataUserNamePush')).key)
+                .child('DataCard')
+                .on('value', (datas) => {
+                    var Mang2 = [];
+                    datas.forEach(element => {
+                        const stt = element.key;
+                        const key = element
+                            .val()
+                            .key;
+                        const name = element
+                            .val()
+                            .name;
+                        Mang2.push({stt: stt, key: key, name: name})
+                    });
+                    this.setState({data2: Mang2});
+                })
 
-		}
-
-		if (localStorage.getItem('mahoan2') === null) {
-				localStorage.setItem('mahoan2', JSON.stringify(mahoan2));
-		} else {
-				var template = JSON.parse(localStorage.getItem('mahoan2'));
-				this.setState({data: template})
-		}
-
-
-
-
-
-
-
-
-
-
-
-
-
+        }
 
         if (localStorage.getItem('mahoan2') === null) {
             localStorage.setItem('mahoan2', JSON.stringify(mahoan2));
@@ -179,6 +159,7 @@ class FormTextBack extends Component {
             var template = JSON.parse(localStorage.getItem('mahoan2'));
             this.setState({data: template})
         }
+
     }
     ButtonsClean = () => {
         localStorage.removeItem('mahoan2');

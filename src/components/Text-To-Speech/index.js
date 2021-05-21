@@ -62,7 +62,7 @@ class Language_speed_ai extends Component {
             request
                 .post('/hmi/tts/v5')
                 .set('Content-Type', 'application/x-www-form-urlencoded')
-                .set('api_key', 'nM3fZWaSpvXCBfPMA8EEe9udHJrI4ttK')
+                .set('api_key', 'Jk3KjUa8OTo8C4VapCdQM6CDDC290Msa')
                 .set('voice', this.state.persion)
                 .set('speed', this.state.persion2)
                 .set('prosody', this.state.persion3)

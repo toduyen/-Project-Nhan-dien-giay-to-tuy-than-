@@ -324,7 +324,7 @@ class BlinkEye extends Component {
 			}
 			else
 			{
-				return null
+				return null;
 			}
 		}
     render() {
@@ -373,8 +373,8 @@ const mapStateToProps = (state, ownProps) => {
 }
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        ThucHIenGetData: (getitem) => {
-            dispatch({type: 'LAY_DATA', getitem})
+        ThucHIenGetData: (ganGiatri) => {
+            dispatch({type: 'THEMMOI_VAO_NUT_CHA', ganGiatri})
         }
     }
 }
