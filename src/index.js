@@ -6,9 +6,9 @@ import * as serviceWorker from './serviceWorker';
 import {Provider} from 'react-redux';
 import store1 from '../src/Redux/store';
 ReactDOM.render(<Provider store={store1}>
-	<React.StrictMode>
+
 	<App />
-	</React.StrictMode>
+	
 </Provider>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
