@@ -1,4 +1,4 @@
-Địa chỉ website đã public: https://toduyen.github.io/Weather24h
+
 
 ## Available Scripts
 
