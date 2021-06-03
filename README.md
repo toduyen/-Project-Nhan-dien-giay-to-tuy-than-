@@ -2,10 +2,10 @@
 ## Một số tính năng đang có trong website
 
 ### 1: Đọc thông tin mặt trước + Thống kê
-[![Little red riding hood](http://i.imgur.com/7YTMFQp.png)](https://youtu.be/z6bXZgYhO-E "Little red riding hood - Click to Watch!")
+[![Little red riding hood](https://langgo.edu.vn/public/files/upload/default/images/ielts/cap-nhat-bo-cau-hoi-ielts-speaking-part-1-moi-nhat.jpg)](https://youtu.be/z6bXZgYhO-E "Little red riding hood - Click to Watch!")
 
 ### 2: Đọc thông tin mặt sau + Danh sách công dân + Chuyển văn bản thành giọng nói + Quản lý tài liệu
-[![Little red riding hood](http://i.imgur.com/7YTMFQp.png)](https://youtu.be/1GsGdxy5Dts "Little red riding hood - Click to Watch!")
+[![Little red riding hood](https://www.cmapass.com/wp-content/uploads/2017/01/part-2-cma-exam.png)](https://youtu.be/1GsGdxy5Dts "Little red riding hood - Click to Watch!")
 
 
 
