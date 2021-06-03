@@ -3,23 +3,15 @@
 
 ### 1: Đọc thông tin mặt trước + Thống kê
 
-<iframe width="560" height="315"
-src="https://youtu.be/z6bXZgYhO-E" 
-frameborder="0" 
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-allowfullscreen></iframe>
+
+<div align="center">
+  <a href="https://youtu.be/z6bXZgYhO-E"><img src="https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" alt="IMAGE ALT TEXT"></a>
+</div>
 
 ### 2: Đọc thông tin mặt sau + Danh sách công dân + Chuyển văn bản thành giọng nói + Quản lý tài liệu
-<iframe width="560" height="315"
-src="https://youtu.be/1GsGdxy5Dts" 
-frameborder="0" 
-allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-allowfullscreen></iframe>
-
-
-
-
-
+<div align="center">
+  <a href="https://youtu.be/1GsGdxy5Dts"><img src="https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" alt="IMAGE ALT TEXT"></a>
+</div>
 
 
 
