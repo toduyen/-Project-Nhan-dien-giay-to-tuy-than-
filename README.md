@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Địa chỉ website đã public: https://toduyen.github.io/Weather24h
 
 ## Available Scripts
 
