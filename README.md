@@ -3,7 +3,7 @@
 
 ### 1: Đọc thông tin mặt trước 
 
-[![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://youtu.be/vt5fpE0bzSY)
+![caption](link to image / GIF)
 
 
 
