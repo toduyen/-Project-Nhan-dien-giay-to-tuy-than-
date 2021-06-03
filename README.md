@@ -3,12 +3,18 @@
 
 ### 1: Đọc thông tin mặt trước + Thống kê
 
-[![Everything Is AWESOME](https://image.shutterstock.com/image-photo/part-1-phrase-made-metallic-260nw-298362929.jpg)](https://youtu.be/z6bXZgYhO-E"Everything Is AWESOME")
-
+<iframe width="560" height="315"
+src="https://youtu.be/z6bXZgYhO-E" 
+frameborder="0" 
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe>
 
 ### 2: Đọc thông tin mặt sau + Danh sách công dân + Chuyển văn bản thành giọng nói + Quản lý tài liệu
-
-[![Everything Is AWESOME](http://www.tornadosafc.com/wpimages/wp141bd4b1_06.png)](https://youtu.be/1GsGdxy5Dts"Everything Is AWESOME")
+<iframe width="560" height="315"
+src="https://youtu.be/1GsGdxy5Dts" 
+frameborder="0" 
+allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+allowfullscreen></iframe>
 
 
 
