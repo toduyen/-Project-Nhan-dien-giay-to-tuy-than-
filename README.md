@@ -1,14 +1,14 @@
 
 ## Một số tính năng đang có trong website
 
-### 1: Đọc thông tin mặt trước 
+### 1: Đọc thông tin mặt trước + Thống kê
 
-[![Everything Is AWESOME](https://img.youtube.com/vi/StTqXEQ2l-Y/0.jpg)](https://www.youtube.com/watch?v=StTqXEQ2l-Y "Everything Is AWESOME")
-
-
+[![Everything Is AWESOME](https://image.shutterstock.com/image-photo/part-1-phrase-made-metallic-260nw-298362929.jpg)](https://youtu.be/z6bXZgYhO-E"Everything Is AWESOME")
 
 
+### 2: Đọc thông tin mặt sau + Danh sách công dân + Chuyển văn bản thành giọng nói + Quản lý tài liệu
 
+[![Everything Is AWESOME](http://www.tornadosafc.com/wpimages/wp141bd4b1_06.png)](https://youtu.be/1GsGdxy5Dts"Everything Is AWESOME")
 
 
 
