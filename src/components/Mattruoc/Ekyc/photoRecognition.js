@@ -10,8 +10,7 @@ var arr = [];
 
 const INIT_STATE = {
     url: null,
-    imageURL: 'https://visabaongoc.com/wp-content/uploads/2018/02/quy-dinh-ve-anh-lam-chung-min' +
-            'h-thu-nhan-dan-3-1024x614.jpg',
+    imageURL: 'https://i.ibb.co/MP0k1dR/chng-minh-nhn-dn-c-thi-gian-bao-lu.jpg',
     fullDesc: null,
     imageDimension: null,
     error: null,

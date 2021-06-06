@@ -414,7 +414,7 @@ class FormText extends Component {
             let ketqua = tems.data[0];
             ketquasss = ketqua.cropped_idcard;
         } else {
-            ketquasss = `https://visabaongoc.com/wp-content/uploads/2018/02/quy-dinh-ve-anh-lam-chung-minh-thu-nhan-dan-3-1024x614.jpg`;
+            ketquasss = `https://wikisecret.com/wp-content/uploads/2019/04/chung-minh.jpg`;
         }
         return (
             <div className="thaydoitinha">
@@ -466,7 +466,7 @@ class FormText extends Component {
                             data-toggle="modal"
                             data-target=".bd-example-modal-xl">
                             <i className="fa fa-ravelry"></i>
-                            Ekyc 2D</button>
+                            Face similarity</button>
                     </div>
 
                     <div
