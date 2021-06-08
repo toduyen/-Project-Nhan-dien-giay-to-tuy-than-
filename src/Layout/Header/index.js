@@ -5,9 +5,11 @@ class Header extends Component {
         return (
             <nav className="navbar navbar-expand navbar-dark bg-dark static-top">
                 <a className="navbar-brand mr-1 fontssss" href="/"><img
-                    src="https://i.imgur.com/sygcnNv.png"
+										style={{width: 150}}
+                    src="https://i.ibb.co/09KYDxq/react-js-blog-header.png"
                     className="anhdaidien"
-                    alt="iconImage"/>Hệ thống thu thập dữ liệu và quản lý giấy tờ tùy thân</a>
+                    alt="iconImage"/></a>
+								<p className="mb-0 changeStyleHeader">Website thu thập dữ liệu và quảng lý giấy tờ tùy thân.</p>
                 {/* Navbar Search */}
                 <form
                     className="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0"></form>
@@ -22,12 +24,15 @@ class Header extends Component {
                             data-toggle="dropdown"
                             aria-haspopup="true"
                             aria-expanded="false">
-														{this.props.uid==='xmZjFzpHjFc2fEYQy1odP62MJaQ2' ?  <small className="alert alert-dark" role="alert">
-                                Người truy cập {this.props.email} Quyền cao nhất
-                            </small> :  <small className="alert alert-dark" role="alert">
-                                Người truy cập {this.props.email}
-                            </small>}
-                           
+                            {this.props.uid === 'xmZjFzpHjFc2fEYQy1odP62MJaQ2'
+                                ? <small className="alert alert-dark" role="alert">
+                                        Người truy cập {this.props.email}
+                                        Quyền cao nhất
+                                    </small>
+                                : <small className="alert alert-dark" role="alert">
+                                    Người truy cập {this.props.email}
+                                </small>}
+
                             <img
                                 src={this.props.avatar}
                                 alt="logo"
@@ -44,21 +49,25 @@ class Header extends Component {
                             <a className="dropdown-item" href="/">
                                 <span>Mã id : {this.props.uid}</span>
                             </a>
-														<a className="dropdown-item" href="/">
-																{this.props.displayName ?  <span>Tên truy cập : {this.props.displayName}</span> :  <span>Tên truy cập : Không có</span>}
-                               
+                            <a className="dropdown-item" href="/">
+                                {this.props.displayName
+                                    ? <span>Tên truy cập : {this.props.displayName}</span>
+                                    : <span>Tên truy cập : Không có</span>}
+
                             </a>
-														<a className="dropdown-item" href="/">
-																{this.props.emailVerified ?  <span>Đã xác thực thư thành công</span> :  <span>Yêu cầu kiểm tra thư điện tử</span>}
-                               
+                            <a className="dropdown-item" href="/">
+                                {this.props.emailVerified
+                                    ? <span>Đã xác thực thư thành công</span>
+                                    : <span>Yêu cầu kiểm tra thư điện tử</span>}
+
                             </a>
                             <div className="dropdown-divider"/>
-                            <a 
+                            <a
                                 className="dropdown-item"
                                 href="/"
                                 data-toggle="modal"
                                 data-target="#logoutModal">{this.props.dangxuat}</a>
-																 <a
+                            <a
                                 className="dropdown-item"
                                 href="/"
                                 data-toggle="modal"
