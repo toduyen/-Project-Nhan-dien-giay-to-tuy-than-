@@ -118,8 +118,16 @@ class UserInfoAuth extends Component {
     }
 
     render() {
-        const logout = <button onClick={this.logout}>Log Out! Auth Github or Facebook</button>;
-        const addData = <button onClick={this.sukienTaiDuLieu}>Yêu cầu kích hoạt tự động</button>; // chua thao tac
+        const logout = <button className="btnInfoUserName" onClick={this.logout}>
+					<svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" className="bi bi-unlock" viewBox="0 0 36 16">
+						<path d="M11 1a2 2 0 0 0-2 2v4a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h5V3a3 3 0 0 1 6 0v4a.5.5 0 0 1-1 0V3a2 2 0 0 0-2-2zM3 8a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1H3z"/>
+					</svg>
+					Log Out! Auth Github or Facebook</button>;
+        const addData = <button className="btnInfoUserName" onClick={this.sukienTaiDuLieu}>
+					<svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="currentColor" className="bi bi-terminal-fill" viewBox="0 0 36 16">
+						<path d="M0 3a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3zm9.5 5.5h-3a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1zm-6.354-.354a.5.5 0 1 0 .708.708l2-2a.5.5 0 0 0 0-.708l-2-2a.5.5 0 1 0-.708.708L4.793 6.5 3.146 8.146z"/>
+					</svg>
+Yêu cầu kích hoạt tự động</button>; // chua thao tac
         if (!this.state.email) {
             return <Login authenticate={this.authenticate}/>;
         }

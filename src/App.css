@@ -755,3 +755,39 @@ element.style {
 	font-style: "consolas";
 	font-size: 20px;
 }
+.maunen{
+	margin: 300px auto;
+	text-align: center;
+}
+.maunen>.loginGitHub , .loginFaceBook{
+	padding: 30px;
+}
+.maunen>.loginGitHub>button , .loginFaceBook>button{
+	padding: 20px;
+	width: 500px;
+	font-style: 'Consolas';
+	background-color: white;
+	border: none;
+	color: black;
+	border-radius: 7px;
+}
+.maunen>.loginGitHub>button:hover , .loginFaceBook>button:hover{
+	background-color: black;
+	border-color: white;
+	color: white;
+}
+.btnInfoUserName{
+	width: 400px;
+	border: none;
+	background-color: black;
+	color: white;
+	padding: 12px;
+	 border-radius: 6px;
+}
+.btnInfoUserName:hover{
+	width: 400px;
+	background-color:white;
+	color: black;
+	padding: 12px;
+	 border-radius: 6px;
+}
