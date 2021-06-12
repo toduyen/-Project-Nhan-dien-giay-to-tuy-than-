@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 export default function asyncComponent(getComponent) {
   class AsyncComponent extends Component {
     static Component = null;
-    state = { 
+    state = {
       // chổ này hơi tricky, trỏ về chính nó
-      Component: AsyncComponent.Component 
+      Component: AsyncComponent.Component
     };
 
     componentDidMount(prevProps, prevState) {
