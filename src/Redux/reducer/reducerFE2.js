@@ -14,7 +14,6 @@ const reducer9 = (state = initState, action) => {
 				treem : action.getupdate.treem,
 				nhomatchu : action.getupdate.nhomatchu,
 		})
-	console.log(JSON.stringify(action.getupdate));
 		return{...state,getdata:action.getitem}
 		default:
 				return state;

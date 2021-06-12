@@ -11,10 +11,6 @@ const reducerFE = (state = initState, action) => {
 					firebasefor.child(action.getupdate.key).update({
             check : action.getupdate.check
 				})
-				firebasefor.once('value').then(function(snapshot){
-					console.log(snapshot.val());
-			})
-			console.log(JSON.stringify(action.getupdate));
         return{...state,getdata:action.getitem}
         default:
             return state;

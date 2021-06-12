@@ -77,7 +77,7 @@ class ChartInFo extends Component {
                 <div className="alert alert-primary" role="alert">
                     Giới tinh nam nhiều hơn giới tính nữ :
                     <a href="/" className="alert-link">{this.state.datasex[0].nam}
-                        %</a>. Hãy tiếp tục theo dõi !.
+                        </a>. Hãy tiếp tục theo dõi !.
                 </div>
             )
         } else if (this.state.datasex[0].nam < this.state.datasex[0].nu) {
@@ -85,7 +85,7 @@ class ChartInFo extends Component {
                 <div className="alert alert-secondary" role="alert">
                     Giới tinh nữ nhiều hơn giới tính nam :
                     <a href="/" className="alert-link">{this.state.datasex[0].nu}
-                        %</a>. Hãy tiếp tục theo dõi !.
+                        </a>. Hãy tiếp tục theo dõi !.
                 </div>
             )
         } else if (this.state.datasex[0].nam === this.state.datasex[0].nu) {
@@ -99,7 +99,6 @@ class ChartInFo extends Component {
     }
 
     render() {
-			console.log(this.state.datasex);
         $(document)
             .ready(function () {
                 columnChart();
