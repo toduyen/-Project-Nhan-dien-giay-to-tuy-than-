@@ -1,7 +1,7 @@
-import {firebasefor} from '../../Firebase/firebaseconnectio';
+import { firebasefor } from '../../Firebase/firebaseconnectio';
 
 const initState = {
-    LuuData2: {},
+  LuuData2: {},
 }
 
 const reducer9 = (state = initState, action) => {

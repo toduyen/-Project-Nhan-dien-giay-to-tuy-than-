@@ -1,20 +1,24 @@
-import {firebasefor} from '../../Firebase/firebaseconnectio';
+import { firebasefor } from '../../Firebase/firebaseconnectio';
 
 const initState = {
-    getdata: {},
+  getdata: {},
 };
 
 const reducerFE = (state = initState, action) => {
-    switch (action.type) {
-	
-        case "SUAQR":
-					firebasefor.child(action.getupdate.key).update({
-            check : action.getupdate.check
-				})
-        return{...state,getdata:action.getitem}
-        default:
-            return state;
-    }
+  switch (action.type) {
+
+    case "SUAQR":
+      firebasefor.child(action.getupdate.key).update({
+        check: action.getupdate.check
+      })
+      firebasefor.once('value').then(function (snapshot) {
+        console.log(snapshot.val());
+      })
+      console.log(JSON.stringify(action.getupdate));
+      return { ...state, getdata: action.getitem }
+    default:
+      return state;
+  }
 };
 
 export default reducerFE;

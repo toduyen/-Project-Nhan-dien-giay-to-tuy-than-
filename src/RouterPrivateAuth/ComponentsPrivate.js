@@ -1,14 +1,14 @@
 import React from 'react';
 import fakeAuth from '../RedirectAuth/FakeAuth';
-import {Route,Redirect} from "react-router-dom";
-const  PrivateRoute = ({ component: Component, ...rest }) => {
-    return (
-      <Route
-        {...rest}
-        render={props =>
-          fakeAuth.isAuthenticated ? (
-            <Component {...props} />
-          ) : (
+import { Route, Redirect } from "react-router-dom";
+const PrivateRoute = ({ component: Component, ...rest }) => {
+  return (
+    <Route
+      {...rest}
+      render={props =>
+        fakeAuth.isAuthenticated ? (
+          <Component {...props} />
+        ) : (
             <Redirect
               to={{
                 pathname: "/login",
@@ -16,8 +16,8 @@ const  PrivateRoute = ({ component: Component, ...rest }) => {
               }}
             />
           )
-        }
-      />
-    );
+      }
+    />
+  );
 }
 export default PrivateRoute;

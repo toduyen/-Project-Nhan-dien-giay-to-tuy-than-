@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import fakeAuth from './FakeAuth';
-import {Redirect} from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { connect } from 'react-redux';
 class Login extends Component {
   state = { redirectToReferrer: false };
@@ -9,15 +9,13 @@ class Login extends Component {
       this.setState({ redirectToReferrer: true });
     });
   };
-  thucThiKhiCoMa = ()  => {
-    if(this.props.reducerStateLoginAuth.dataLogin === 'xmZjFzpHjFc2fEYQy1odP62MJaQ2')
-    {
+  thucThiKhiCoMa = () => {
+    if (this.props.reducerStateLoginAuth.dataLogin === 'xmZjFzpHjFc2fEYQy1odP62MJaQ2') {
       fakeAuth.authenticate(() => {
         this.setState({ redirectToReferrer: true });
       });
     }
-    else
-    {
+    else {
       return null;
     }
   }
@@ -27,7 +25,7 @@ class Login extends Component {
     if (redirectToReferrer) return <Redirect to={from} />;
     return (
       <div>
-          {this.thucThiKhiCoMa()}
+        {this.thucThiKhiCoMa()}
       </div>
     );
   }
