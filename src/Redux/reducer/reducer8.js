@@ -6,7 +6,6 @@ const initState = {
 const reducer8 = (state = initState, action) => {
 	switch (action.type) {
 		case  "ADD_API" :
-		console.log(JSON.stringify(state.Nhangiatriapimoi));
 		firebasethree.push(action.getdata);
 		return{...state,Nhangiatriapimoi:action.getdata}
 		default:
