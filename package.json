@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "bootstrap-icons": "^1.4.1",
+    "bootstrap-icons": "^1.5.0",
     "face-api.js": "^0.22.2",
     "firebase": "^7.24.0",
     "html-to-text": "^5.1.1",
@@ -20,11 +20,11 @@
     "react-images-upload": "^1.2.8",
     "react-loading-screen": "0.0.17",
     "react-qr-reader": "^2.2.1",
-    "react-redux": "^7.2.3",
+    "react-redux": "^7.2.4",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.3",
-    "react-webcam": "^5.2.3",
-    "redux": "^4.0.5",
+    "react-webcam": "^5.2.4",
+    "redux": "^4.1.0",
     "superagent": "^6.1.0"
   },
   "scripts": {
