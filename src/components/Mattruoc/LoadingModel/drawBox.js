@@ -106,11 +106,13 @@ class DrawBox extends Component {
                       width: _W,
                       marginTop: 0,
                       color: '#fff',
+											fontSize: 12,
                       transform: `translate(-3px,${_H}px)`
                     }}>
                     {match[i]._label}
                     <br /> {this.state.gender}
                     <br /> {Math.round(this.state.age)}
+										<br /> {this.renderBlink()}
                   </p>
                 )
                 : <p
