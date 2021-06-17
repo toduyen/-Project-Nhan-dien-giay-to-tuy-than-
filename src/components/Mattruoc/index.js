@@ -414,7 +414,7 @@ class FormText extends Component {
       let ketqua = tems.data[0];
       ketquasss = ketqua.cropped_idcard;
     } else {
-      ketquasss = `https://wikisecret.com/wp-content/uploads/2019/04/chung-minh.jpg`;
+      ketquasss = `https://i.ibb.co/MP0k1dR/chng-minh-nhn-dn-c-thi-gian-bao-lu.jpg`;
     }
     return (
       <div className="thaydoitinha">
