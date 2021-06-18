@@ -1,4 +1,4 @@
-## 1: Hướng dẫn cách dùng
+## 1: Yêu cầu tiên quyết
 
 ### Bước 1.1: Click thông tin tài khoản
 [![Little red riding hood](https://i.ibb.co/SNbVCLt/1.png)](https://youtu.be/1GsGdxy5Dts "Little red riding hood - Click to Watch!")
