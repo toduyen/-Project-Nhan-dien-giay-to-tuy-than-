@@ -1,10 +1,17 @@
+## 1: Hướng dẫn cách dùng
 
-## Một số tính năng đang có trong website
+### Bước 1.1: Click thông tin tài khoản
+[![Little red riding hood](https://i.ibb.co/SNbVCLt/1.png)](https://youtu.be/1GsGdxy5Dts "Little red riding hood - Click to Watch!")
 
-### 1: Đọc thông tin mặt trước + Thống kê (CLick image play video)
+### Bước 1.2: Click vào yêu cầu kích hoạt tự động
+[![Little red riding hood](https://i.ibb.co/yVHT2y1/2.png)](https://youtu.be/1GsGdxy5Dts "Little red riding hood - Click to Watch!")
+
+## 2: Một số tính năng đang có trong website
+
+### 2.1: Đọc thông tin mặt trước + Thống kê (CLick image play video)
 [![Little red riding hood](https://langgo.edu.vn/public/files/upload/default/images/ielts/cap-nhat-bo-cau-hoi-ielts-speaking-part-1-moi-nhat.jpg)](https://youtu.be/z6bXZgYhO-E "Little red riding hood - Click to Watch!")
 
-### 2: Đọc thông tin mặt sau + Danh sách công dân + Chuyển văn bản thành giọng nói + Quản lý tài liệu (CLick image play video)
+### 2.2: Đọc thông tin mặt sau + Danh sách công dân + Chuyển văn bản thành giọng nói + Quản lý tài liệu (CLick image play video)
 [![Little red riding hood](https://www.cmapass.com/wp-content/uploads/2017/01/part-2-cma-exam.png)](https://youtu.be/1GsGdxy5Dts "Little red riding hood - Click to Watch!")
 
 
