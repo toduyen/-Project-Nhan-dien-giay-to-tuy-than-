@@ -1,3 +1,5 @@
+# địa chỉ website: https://getdataai.firebaseapp.com/ hoặc https://getdataai.web.app/
+
 ## 1: Yêu cầu tiên quyết
 
 ### Bước 1.1: Click thông tin tài khoản
