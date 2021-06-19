@@ -8,7 +8,7 @@
 ### Bước 1.2: Click vào yêu cầu kích hoạt tự động
 [![Little red riding hood](https://i.ibb.co/yVHT2y1/2.png)](https://youtu.be/1GsGdxy5Dts "Little red riding hood - Click to Watch!")
 
-### Bước 1.3: Lỗi chưa fix cho tính năng front card (Tạm thời click đến khi nào có dữ liệu hiển thị ở Bước thứ 4 trong mục mô tả)
+### Bước 1.3: Lỗi chưa fix cho tính năng front card (Tạm thời click đến khi nào có dữ liệu hiển thị ở Bước thứ 4 trong mục mô tả) đến khi nào có button Check EKyc thì click vào
 [![Little red riding hood](https://i.ibb.co/nLYjLwp/Capture.png)](https://youtu.be/1GsGdxy5Dts "Little red riding hood - Click to Watch!")
 
 
