@@ -18,8 +18,8 @@ export default class Home extends Component {
         }}>
         <h2>Giới thiệu sản phẩm</h2>
         <h4>
-          Hiện tại mã nguồn chưa công khai{' '}
-          <a href="https://github.com/justadudewhohacks/face-api.js">
+          Hiện tại mã nguồn đã công khai và đang trong thời gian fix bug{' '}
+          <a href="https://github.com/toduyen/-Project-Nhan-dien-giay-to-tuy-than-">
             github
                     </a>{' '}
           (Dự án có áp dụng nhiều công nghệ máy học tân tiến)
