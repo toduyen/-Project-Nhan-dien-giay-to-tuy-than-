@@ -24,13 +24,7 @@ class FormTextBack extends Component {
   isChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-    this.setState({ [name]: value })
-    console.log(value);
-  }
-  isChange2 = (event) => {
-    const value = event.target.value;
-    this.setState({ changeGiayTo: value })
-    console.log(value);
+    this.setState({[name]: value })
   }
   handleTakePhoto = (dataUri) => {
     console.log('takePhoto' + dataUri);
@@ -97,7 +91,6 @@ class FormTextBack extends Component {
     return (this.state.datas[this.state.datas.length - 1]);
   }
   componentDidMount() {
-
     firebasethree.on('value', (datas) => {
       var Mang = [];
       datas.forEach(element => {
@@ -380,7 +373,7 @@ class FormTextBack extends Component {
 
                       <select
                         className="form-control form-control-sm"
-                        onChange={(event) => this.isChange2(event)}
+                        onChange={(event) => this.isChange(event)}
                         name="persion">
                         <option value>Chọn loại giấy tờ</option>
                         <option value={"/vision/idr/vnm"}>Chứng minh nhân dân và căn cước công dân</option>

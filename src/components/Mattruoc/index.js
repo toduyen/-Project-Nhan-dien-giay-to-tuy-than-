@@ -27,8 +27,8 @@ class FormText extends Component {
   }
   isChange = (event) => {
     const value = event.target.value;
-    this.setState({ image_url: event.target.value, data: event.target.value })
-    console.log(value);
+		const name = event.target.name;
+    this.setState({ [name]: value, data: value })
   }
 
   handleTakePhoto = (dataUri) => {
@@ -40,7 +40,6 @@ class FormText extends Component {
   isChange2 = (event) => {
     const value = event.target.value;
     this.setState({ changeGiayTo: value })
-    console.log(value);
   }
 
   renderButtonClick = () => {
