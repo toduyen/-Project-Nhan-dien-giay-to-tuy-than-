@@ -12,7 +12,6 @@ class Search3 extends Component {
     const name = event.target.name;
     const value = event.target.value;
     this.setState({ [name]: value });
-    console.log(this.state.search);
     this
       .props
       .luutruduieu2(this.state.search);
@@ -36,8 +35,8 @@ class Search3 extends Component {
           <button
             type="button"
             className="btn btn-warning right"
-            onClick={(dl) => this.props.luutruduieu2(this.state.search)}>
-            <i class="fas fa-search"></i>
+            onClick={() => this.props.luutruduieu2(this.state.search)}>
+            <i className="fas fa-search"></i>
           </button>
         </div>
       </div>

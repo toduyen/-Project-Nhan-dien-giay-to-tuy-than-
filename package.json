@@ -9,6 +9,7 @@
     "html-to-text": "^5.1.1",
     "jquery": "^3.6.0",
     "jspdf": "^2.3.1",
+    "prop-types": "^15.7.2",
     "re-base": "^4.0.0",
     "react": "^16.14.0",
     "react-bs-notifier": "^5.0.0",

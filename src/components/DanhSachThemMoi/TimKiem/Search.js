@@ -11,7 +11,6 @@ class Search extends Component {
     const name = event.target.name;
     const value = event.target.value;
     this.setState({ [name]: value });
-    console.log(this.state);
     this
       .props
       .GhiNhanKietQuaTimKiem(this.state.search);

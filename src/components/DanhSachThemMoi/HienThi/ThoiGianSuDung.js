@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 class Datatable extends Component {
 
   YearGetNew = () => {
@@ -36,6 +36,17 @@ class Datatable extends Component {
       </tr>
     );
   }
+}
+Datatable.PropTypes = {
+	stt: PropTypes.string,
+	name: PropTypes.string,
+	id: PropTypes.string,
+	dob: PropTypes.string,
+	home: PropTypes.string,
+	address: PropTypes.string,
+	sex: PropTypes.string,
+	nationality: PropTypes.string,
+	doe: PropTypes.string,
 }
 
 export default Datatable;
