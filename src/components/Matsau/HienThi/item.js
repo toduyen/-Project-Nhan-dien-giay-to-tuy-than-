@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 class itemback extends Component {
   render() {
     return (
@@ -48,5 +48,14 @@ class itemback extends Component {
     );
   }
 }
-
+itemback.propTypes = {
+	dulieushh: PropTypes.shape({
+		cropped_idcard: PropTypes.string,
+		dulieushh: PropTypes.string,
+		ethnicity: PropTypes.string,
+		religion: PropTypes.string,
+		issue_date: PropTypes.string,
+		issue_loc:  PropTypes.string
+	})
+}
 export default itemback;

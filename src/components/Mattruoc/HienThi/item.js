@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 class item extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: this.props.dulieushh,
       ketquachinhthuc: ''
     };
   }
@@ -139,5 +139,20 @@ class item extends Component {
     );
   }
 }
-
+item.propTypes = {
+	dulieushh: PropTypes.shape({
+		nationality: PropTypes.string,
+		sex: PropTypes.string,
+		cropped_idcard: PropTypes.string,
+		dulieushh: PropTypes.string,
+		face: PropTypes.string,
+		name: PropTypes.string,
+		address: PropTypes.string,
+		home: PropTypes.string,
+		id: PropTypes.string,
+		dob: PropTypes.string,
+		doe: PropTypes.string,
+		nationality: PropTypes.string
+	})
+}
 export default item;

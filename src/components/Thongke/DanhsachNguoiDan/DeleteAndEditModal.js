@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 class Buttonform extends Component {
   constructor(props) {
@@ -163,6 +164,17 @@ class Buttonform extends Component {
       </div>
     );
   }
+}
+Buttonform.propTypes = {
+	thongtincaptinhThongke: PropTypes.shape({
+		key: PropTypes.string,
+		name: PropTypes.string,
+		id: PropTypes.string,
+		dob: PropTypes.string,
+		home: PropTypes.string,
+		address: PropTypes.string,
+		sex: PropTypes.string,
+	})
 }
 const mapStateToProps = (state, ownProps) => {
   return { ThucHienUpdate: state.updatedata }

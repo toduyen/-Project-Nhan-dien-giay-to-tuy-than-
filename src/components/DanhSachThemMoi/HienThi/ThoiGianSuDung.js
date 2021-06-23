@@ -37,7 +37,7 @@ class Datatable extends Component {
     );
   }
 }
-Datatable.PropTypes = {
+Datatable.propTypes = {
 	stt: PropTypes.string,
 	name: PropTypes.string,
 	id: PropTypes.string,
