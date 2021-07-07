@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import fakeAuth from './FakeAuth';
 import { Redirect } from "react-router-dom";
 import { connect } from 'react-redux';
+const uidKey = process.env.REACT_APP_WEATHER_API_KEY;
 class Login extends Component {
   state = { redirectToReferrer: false };
   login = () => {
@@ -10,7 +11,7 @@ class Login extends Component {
     });
   };
   thucThiKhiCoMa = () => {
-    if (this.props.reducerStateLoginAuth.dataLogin === process.env.REACT_APP_UID_USERNAME_KEY) {
+    if (this.props.reducerStateLoginAuth.dataLogin === uidKey) {
       fakeAuth.authenticate(() => {
         this.setState({ redirectToReferrer: true });
       });
