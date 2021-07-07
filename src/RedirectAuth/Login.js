@@ -10,7 +10,7 @@ class Login extends Component {
     });
   };
   thucThiKhiCoMa = () => {
-    if (this.props.reducerStateLoginAuth.dataLogin === 'xmZjFzpHjFc2fEYQy1odP62MJaQ2') {
+    if (this.props.reducerStateLoginAuth.dataLogin === process.env.REACT_APP_UID_USERNAME_KEY) {
       fakeAuth.authenticate(() => {
         this.setState({ redirectToReferrer: true });
       });

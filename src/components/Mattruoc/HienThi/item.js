@@ -152,7 +152,6 @@ item.propTypes = {
 		id: PropTypes.string,
 		dob: PropTypes.string,
 		doe: PropTypes.string,
-		nationality: PropTypes.string
 	})
 }
 export default item;

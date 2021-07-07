@@ -1,5 +1,5 @@
-import reducer2 from './reducer/reducer2';
-import reducer3 from './reducer/reducer3';
+import ThemmoiFrontCard from './reducer/ThemmoiFrontCard';
+import XoaDuLieuCaHaiMat from './reducer/XoaDuLieuCaHaiMat';
 import reducer4 from './reducer/reducer4';
 import reducer5 from './reducer/reducer5';
 import reducer6 from './reducer/reducer6';
@@ -14,8 +14,8 @@ import reducerPushDatauser from './reducer/ReducerPushDataUserNameNew';
 var redux = require('redux');
 
 var allreducer = redux.combineReducers({
-    updatedata: reducer2,
-    xoa: reducer3,
+    updatedata: ThemmoiFrontCard,
+    xoa: XoaDuLieuCaHaiMat,
     thuchienluudata: reducer4,
     thuchienxoaaudios: reducer5,
     thongbao: reducer6,
