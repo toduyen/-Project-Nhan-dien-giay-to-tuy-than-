@@ -11,7 +11,6 @@
 ### Bước 1.3: Lỗi chưa fix cho tính năng front card (Tạm thời click đến khi nào có dữ liệu hiển thị ở Bước thứ 4 trong mục mô tả) đến khi nào có button Check EKyc thì click vào
 [![Little red riding hood](https://i.ibb.co/nLYjLwp/Capture.png)](https://youtu.be/1GsGdxy5Dts "Little red riding hood - Click to Watch!")
 
-
 ## 2: Một số tính năng đang có trong website
 
 ### 2.1: Đọc thông tin mặt trước + Thống kê (CLick image play video)
