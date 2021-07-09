@@ -1,4 +1,5 @@
 [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/toduyen/-Project-Nhan-dien-giay-to-tuy-than-)
+[![ngx-face-api-js](https://nodei.co/npm/ngx-face-api-js.png)](https://www.npmjs.com/package/ngx-face-api-js)
 # địa chỉ website: https://getdataai.firebaseapp.com/ hoặc https://getdataai.web.app/
 
 ## 1: Yêu cầu tiên quyết
