@@ -1,3 +1,4 @@
+[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/toduyen/-Project-Nhan-dien-giay-to-tuy-than-)
 # địa chỉ website: https://getdataai.firebaseapp.com/ hoặc https://getdataai.web.app/
 
 ## 1: Yêu cầu tiên quyết
