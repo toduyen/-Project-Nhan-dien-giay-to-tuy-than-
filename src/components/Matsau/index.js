@@ -14,7 +14,7 @@ class FormTextBack extends Component {
       data: '',
       data2: '',
       persion: '',
-      changeGiayTo: '',
+			giayto: '',
       dataBase64: "",
       datas: [process.env.REACT_APP_API_KEY],
       persion2: '',
@@ -36,7 +36,7 @@ class FormTextBack extends Component {
     var info = {};
     info.image_url = this.state.image_url;
     await request
-      .post(this.state.changeGiayTo)
+      .post(this.state.giayto)
       .send({ image_base64: this.state.dataBase64 })
       .send({ image_url: this.state.image_url })
       .send({ face: 1 })
@@ -48,7 +48,6 @@ class FormTextBack extends Component {
         } else {
           const titlessd = res.text;
           this.setState({ tempulary: titlessd });
-          var items = JSON.parse(res.text);
           switch (res.body.errorCode) {
             case 3:
               alert('hệ thống không tìm thấy CMT trong ảnh hoặc ảnh có chất lượng kém (quá mờ, quá tố' +
@@ -79,6 +78,7 @@ class FormTextBack extends Component {
               alert('Request sử dụng key image_base64 nhưng string cung cấp không hợp lệ.');
               break;
             case 0:
+              var items = JSON.parse(res.text);
               localStorage.setItem('mahoan2', JSON.stringify(items.data[0]));
               break;
             default:
@@ -374,7 +374,7 @@ class FormTextBack extends Component {
                       <select
                         className="form-control form-control-sm"
                         onChange={(event) => this.isChange(event)}
-                        name="persion">
+                        name="giayto">
                         <option value>Chọn loại giấy tờ</option>
                         <option value={"/vision/idr/vnm"}>Chứng minh nhân dân và căn cước công dân</option>
                         <option value={"/vision/dlr/vnm"}>Giấy phép lái xe</option>
@@ -382,17 +382,6 @@ class FormTextBack extends Component {
                       </select>
                     </div>
                   </div>
-
-                  <div className="form-group">
-
-                    {this.state.changeGiayTo && <div className="alert alert-primary" role="alert">
-                      Giấy tờ cá nhân :
-                                            <a href="/" className="alert-link">{this.state.changeGiayTo}</a>
-                    </div>
-                    }
-
-                  </div>
-
                 </div>
                 <div className="modal-footer">
                   <button type="button" className="btn btn-primary" data-dismiss="modal">Save change</button>
