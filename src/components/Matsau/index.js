@@ -36,11 +36,10 @@ class FormTextBack extends Component {
     var info = {};
     info.image_url = this.state.image_url;
     await request
-      .post(`https://api.fpt.ai/${this.state.giayto}`)
+      .post(this.state.giayto)
       .send({ image_base64: this.state.dataBase64 })
       .send({ image_url: this.state.image_url })
       .send({ face: 1 })
-      .set('Content-Type', 'application/x-www-form-urlencoded')
       .set('api_key', this.hamngoai())
       .end((err, res) => {
         if (err) {
@@ -48,7 +47,7 @@ class FormTextBack extends Component {
         } else {
           const titlessd = res.text.toString();
           this.setState({ tempulary: titlessd });
-          var items = JSON.parse(res.text);
+          var items = JSON.parse(`${res.text}`);
           switch (res.body.errorCode) {
             case 3:
               alert('hệ thống không tìm thấy CMT trong ảnh hoặc ảnh có chất lượng kém (quá mờ, quá tố' +
@@ -254,6 +253,7 @@ class FormTextBack extends Component {
   }
   chuyengiatrisangchokhacnha = () => {
     if (this.state.tempulary) {
+      console.log(this.state.tempulary);
       let tems = JSON.parse(this.state.tempulary);
       let ketqua = tems.data[0];
       return (

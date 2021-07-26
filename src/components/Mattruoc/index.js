@@ -59,11 +59,10 @@ class FormText extends Component {
     var info = {};
     info.image_url = this.state.image_url;
     await request
-      .post(`https://api.fpt.ai/${this.state.changeGiayTo}`)
+      .post(this.state.changeGiayTo)
       .send({ image_base64: this.state.dataBase64 })
       .send({ image_url: this.state.image_url })
       .send({ face: 1 })
-      .set('Content-Type', 'application/x-www-form-urlencoded')
       .set('api_key', this.hamngoai())
       .end((err, res) => {
         if (err) {
@@ -71,7 +70,7 @@ class FormText extends Component {
         } else {
           const titles = res.text.toString();
           this.setState({ temp: titles });
-          var items = JSON.parse(res.text);
+          var items = JSON.parse(`${res.text}`);
           switch (res.body.errorCode) {
             case 3:
               alert('hệ thống không tìm thấy CMT trong ảnh hoặc ảnh có chất lượng kém (quá mờ, quá tố' +
@@ -409,9 +408,7 @@ class FormText extends Component {
   render() {
     let ketquasss = ``;
     if (this.state.temp) {
-      let tems = JSON.parse(this.state.temp);
-      let ketqua = tems.data[0];
-      ketquasss = ketqua.cropped_idcard;
+      ketquasss = JSON.parse(this.state.temp).data[0].cropped_idcard;
     } else {
       ketquasss = `https://i.ibb.co/MP0k1dR/chng-minh-nhn-dn-c-thi-gian-bao-lu.jpg`;
     }
