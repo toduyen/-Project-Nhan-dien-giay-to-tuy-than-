@@ -59,7 +59,7 @@ class FormText extends Component {
     var info = {};
     info.image_url = this.state.image_url;
     await request
-      .post(this.state.changeGiayTo)
+      .post(`https://api.fpt.ai/${this.state.changeGiayTo}`)
       .send({ image_base64: this.state.dataBase64 })
       .send({ image_url: this.state.image_url })
       .send({ face: 1 })
@@ -69,7 +69,7 @@ class FormText extends Component {
         if (err) {
           alert("Input đầu vào có vấn đề");
         } else {
-          const titles = res.text;
+          const titles = res.text.toString();
           this.setState({ temp: titles });
           var items = JSON.parse(res.text);
           switch (res.body.errorCode) {

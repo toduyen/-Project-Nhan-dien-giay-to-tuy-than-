@@ -36,7 +36,7 @@ class FormTextBack extends Component {
     var info = {};
     info.image_url = this.state.image_url;
     await request
-      .post(this.state.giayto)
+      .post(`https://api.fpt.ai/${this.state.giayto}`)
       .send({ image_base64: this.state.dataBase64 })
       .send({ image_url: this.state.image_url })
       .send({ face: 1 })
@@ -46,8 +46,9 @@ class FormTextBack extends Component {
         if (err) {
           alert("hết hạn số lượt gọi");
         } else {
-          const titlessd = res.text;
+          const titlessd = res.text.toString();
           this.setState({ tempulary: titlessd });
+          var items = JSON.parse(res.text);
           switch (res.body.errorCode) {
             case 3:
               alert('hệ thống không tìm thấy CMT trong ảnh hoặc ảnh có chất lượng kém (quá mờ, quá tố' +
@@ -78,7 +79,6 @@ class FormTextBack extends Component {
               alert('Request sử dụng key image_base64 nhưng string cung cấp không hợp lệ.');
               break;
             case 0:
-              var items = JSON.parse(res.text);
               localStorage.setItem('mahoan2', JSON.stringify(items.data[0]));
               break;
             default:
