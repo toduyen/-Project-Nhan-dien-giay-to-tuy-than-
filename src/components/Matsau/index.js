@@ -40,6 +40,7 @@ class FormTextBack extends Component {
       .send({ image_base64: this.state.dataBase64 })
       .send({ image_url: this.state.image_url })
       .send({ face: 1 })
+			.set('Content-Type', 'application/x-www-form-urlencoded')
       .set('api_key', this.hamngoai())
       .end((err, res) => {
         if (err) {
@@ -253,7 +254,6 @@ class FormTextBack extends Component {
   }
   chuyengiatrisangchokhacnha = () => {
     if (this.state.tempulary) {
-      console.log(this.state.tempulary);
       let tems = JSON.parse(this.state.tempulary);
       let ketqua = tems.data[0];
       return (
@@ -305,7 +305,6 @@ class FormTextBack extends Component {
   }
 
   render() {
-
     return (
       <div>
         <div className="input-group mb-3 mt-5">

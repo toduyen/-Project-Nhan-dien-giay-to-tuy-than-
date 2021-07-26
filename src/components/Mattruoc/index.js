@@ -63,6 +63,7 @@ class FormText extends Component {
       .send({ image_base64: this.state.dataBase64 })
       .send({ image_url: this.state.image_url })
       .send({ face: 1 })
+			.set('Content-Type', 'application/x-www-form-urlencoded')
       .set('api_key', this.hamngoai())
       .end((err, res) => {
         if (err) {
