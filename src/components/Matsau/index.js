@@ -36,7 +36,7 @@ class FormTextBack extends Component {
     var info = {};
     info.image_url = this.state.image_url;
     await request
-      .post(this.state.giayto)
+      .post(`https://api.fpt.ai${this.state.giayto}`)
       .send({ image_base64: this.state.dataBase64 })
       .send({ image_url: this.state.image_url })
       .send({ face: 1 })
@@ -46,9 +46,8 @@ class FormTextBack extends Component {
         if (err) {
           alert("hết hạn số lượt gọi");
         } else {
-          const titlessd = res.text.toString();
-          this.setState({ tempulary: titlessd });
-          var items = JSON.parse(`${res.text}`);
+          const convertNha = JSON.parse(res.text);
+          this.setState({ tempulary: convertNha.data[0] });
           switch (res.body.errorCode) {
             case 3:
               alert('hệ thống không tìm thấy CMT trong ảnh hoặc ảnh có chất lượng kém (quá mờ, quá tố' +
@@ -79,7 +78,7 @@ class FormTextBack extends Component {
               alert('Request sử dụng key image_base64 nhưng string cung cấp không hợp lệ.');
               break;
             case 0:
-              localStorage.setItem('mahoan2', JSON.stringify(items.data[0]));
+              localStorage.setItem('mahoan2', JSON.stringify(convertNha.data[0]));
               break;
             default:
               return null;
@@ -254,8 +253,7 @@ class FormTextBack extends Component {
   }
   chuyengiatrisangchokhacnha = () => {
     if (this.state.tempulary) {
-      let tems = JSON.parse(this.state.tempulary);
-      let ketqua = tems.data[0];
+      const {tempulary} = this.state;
       return (
         <div>
           <div className="col">
@@ -264,7 +262,7 @@ class FormTextBack extends Component {
                 <img
                   className="card-img-top"
                   width="120px"
-                  src={ketqua.cropped_idcard}
+                  src={tempulary.cropped_idcard}
                   alt="demo" />
               </div>
               <div className="card-body">
@@ -277,22 +275,22 @@ class FormTextBack extends Component {
                     className="card-title color_mana mb-20"
                     style={{
                       marginBottom: '23px'
-                    }}>Dân tộc : {ketqua.ethnicity}</h5>
+                    }}>Dân tộc : {tempulary.ethnicity}</h5>
                   <h5
                     className="card-title color_mana mb-20"
                     style={{
                       marginBottom: '23px'
-                    }}>Tôn giáo : {ketqua.religion}</h5>
+                    }}>Tôn giáo : {tempulary.religion}</h5>
                   <h5
                     className="card-title color_mana mb-20"
                     style={{
                       marginBottom: '23px'
-                    }}>Ngày cấp : {ketqua.issue_date}</h5>
+                    }}>Ngày cấp : {tempulary.issue_date}</h5>
                   <h5
                     className="card-title color_mana mb-20"
                     style={{
                       marginBottom: '23px'
-                    }}>Nơi cấp : {ketqua.issue_loc}</h5>
+                    }}>Nơi cấp : {tempulary.issue_loc}</h5>
                 </div>
               </div>
             </div>
@@ -305,6 +303,7 @@ class FormTextBack extends Component {
   }
 
   render() {
+
     return (
       <div>
         <div className="input-group mb-3 mt-5">
