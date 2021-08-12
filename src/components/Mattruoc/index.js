@@ -59,7 +59,7 @@ class FormText extends Component {
     var info = {};
     info.image_url = this.state.image_url;
     await request
-      .post(`https://api.fpt.ai${this.state.changeGiayTo}`)
+      .post(this.state.changeGiayTo)
       .send({ image_base64: this.state.dataBase64 })
       .send({ image_url: this.state.image_url })
       .send({ face: 1 })
