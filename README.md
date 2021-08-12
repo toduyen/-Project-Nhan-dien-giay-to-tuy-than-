@@ -2,24 +2,28 @@
 [![ngx-face-api-js](https://nodei.co/npm/ngx-face-api-js.png)](https://www.npmjs.com/package/ngx-face-api-js)
 # địa chỉ website: https://getdataai.firebaseapp.com/ hoặc https://getdataai.web.app/
 
-## 1: Yêu cầu tiên quyết
 
-### Bước 1.1: Click thông tin tài khoản
-[![Little red riding hood](https://i.ibb.co/SNbVCLt/1.png)](https://youtu.be/1GsGdxy5Dts "Little red riding hood - Click to Watch!")
+## 1: Một số tính năng đang có trong website
 
-### Bước 1.2: Click vào yêu cầu kích hoạt tự động
-[![Little red riding hood](https://i.ibb.co/yVHT2y1/2.png)](https://youtu.be/1GsGdxy5Dts "Little red riding hood - Click to Watch!")
-
-### Bước 1.3: Lỗi chưa fix cho tính năng front card (Tạm thời click đến khi nào có dữ liệu hiển thị ở Bước thứ 4 trong mục mô tả) đến khi nào có button Check EKyc thì click vào
-[![Little red riding hood](https://i.ibb.co/nLYjLwp/Capture.png)](https://youtu.be/1GsGdxy5Dts "Little red riding hood - Click to Watch!")
-
-## 2: Một số tính năng đang có trong website
-
-### 2.1: Đọc thông tin mặt trước + Thống kê (CLick image play video)
+### 1.1: Đọc thông tin mặt trước + Thống kê (CLick image play video)
 [![Little red riding hood](https://langgo.edu.vn/public/files/upload/default/images/ielts/cap-nhat-bo-cau-hoi-ielts-speaking-part-1-moi-nhat.jpg)](https://files.fm/f/pcw5n289t "Little red riding hood - Click to Watch!")
 
-### 2.2: Đọc thông tin mặt sau + Danh sách công dân + Chuyển văn bản thành giọng nói + Quản lý tài liệu (CLick image play video)
+### 1.2: Đọc thông tin mặt sau + Danh sách công dân + Chuyển văn bản thành giọng nói + Quản lý tài liệu (CLick image play video)
 [![Little red riding hood](https://www.cmapass.com/wp-content/uploads/2017/01/part-2-cma-exam.png)](https://files.fm/f/bznvz7sbn "Little red riding hood - Click to Watch!")
+
+
+## 2: Yêu cầu tiên quyết
+
+### Bước 2.1: Click thông tin tài khoản
+[![Little red riding hood](https://i.ibb.co/SNbVCLt/1.png)](https://youtu.be/1GsGdxy5Dts "Little red riding hood - Click to Watch!")
+
+### Bước 2.2: Click vào yêu cầu kích hoạt tự động
+[![Little red riding hood](https://i.ibb.co/yVHT2y1/2.png)](https://youtu.be/1GsGdxy5Dts "Little red riding hood - Click to Watch!")
+
+### Bước 2.3: tính năng face-simility (Tạm thời click đến khi nào có dữ liệu hiển thị ở Bước thứ 4 trong mục mô tả) đến khi nào có button Check EKyc thì click vào
+[![Little red riding hood](https://i.ibb.co/nLYjLwp/Capture.png)](https://youtu.be/1GsGdxy5Dts "Little red riding hood - Click to Watch!")
+
+
 
 
 
